@@ -4,3 +4,8 @@ print('Hellow World')
 print ('What is your name?')
 yourName = input()
 print('Good to meet you, ' + yourName)
+
+print('The length of your name is: ' + str(len(yourName)))
+print('What is your age?')
+yourAge = input()
+print('You will be ' + str(int(yourAge) + 1) + ' in one year')
