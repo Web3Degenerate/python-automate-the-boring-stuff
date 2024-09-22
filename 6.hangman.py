@@ -1,5 +1,64 @@
 import random
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+
 word_list = ["aardvark", "baboon", "camel"]
+
+lives = 6
 
 chosen_word = random.choice(word_list)
 print(chosen_word)
@@ -67,6 +126,15 @@ while not game_over:
 
     #### IMPORTANT PYTHON FUNCTION - in and NOT in ###############
 ### not in
+    if guess not in chosen_word:
+        lives -= 1
+        if lives == 0:
+            game_over = True
+            print("Sorry mate, you lose. Game Over!")
+
+
     if "_" not in display:
         game_over = True
         print(f'Congrats, you guessed the word {chosen_word}\n You win!')
+
+    print(stages[lives])
