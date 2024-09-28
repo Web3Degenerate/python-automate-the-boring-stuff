@@ -31,7 +31,18 @@ def encrypt(original_text, shift_amount):
 # TODO-3: Call the 'encrypt()' function and pass in the user inputs. You should be able to test the code and encrypt a
 #  message.
 
+
+# Add decrypt method
+def decrypt(original_text, shift_amount):
+    deciphered_text = ""
+    for letter in original_text:
+        shifted_position = alphabet.index(letter) - shift_amount
+        shifted_position %= len(alphabet)
+        deciphered_text += alphabet[shifted_position]
+    print(f"Here is the encoded result: {deciphered_text}")
+
 encrypt(original_text=text, shift_amount=shift)
+decrypt(original_text=text, shift_amount=shift)
 
 # fruits = ['Apple', 'Pear', 'Banana']
 # fruits.index("Banana") #returns 2
