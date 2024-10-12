@@ -16,4 +16,10 @@ def function(text):
 
 ```
 
-4. 
+4. Append method
+`correct_letters_list.append(letter)`
+
+
+---
+5. Index
+`alphabet.index(letter)`
