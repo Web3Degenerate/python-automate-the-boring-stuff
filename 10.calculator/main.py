@@ -1,3 +1,5 @@
+import calcart
+
 def subtract(n1, n2): 
     return n1 - n2
 
@@ -26,6 +28,7 @@ operations = {
 # use recursion
 def calculator():
     # if using ascii art import here with print(art.logo)
+    print(calcart.logo)
     should_accumulate = True
     num1 = float(input("What is the first number?"))
 

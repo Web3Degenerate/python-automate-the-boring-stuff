@@ -23,3 +23,18 @@ def function(text):
 ---
 5. Index
 `alphabet.index(letter)`
+
+----
+6. choice() with import random
+
+```python
+
+import random
+
+cards = [11,2,3,4,5,6,7,8,9,10,10,10,10]
+card = random.choice(cards)
+
+```
+
+---
+7. 
