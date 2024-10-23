@@ -23,6 +23,8 @@ def calculate_score(cards):
 
 user_cards = []
 computer_cards = []
+computer_score = -1 #to prevent computer_score from being undefined
+user_score = -1 #to prevent user_score from being undefined. 
 is_game_over = False
 
 """If you don't need a variable you can use an underscore _ """
@@ -43,17 +45,23 @@ for _ in range(2):
     user_cards.append(deal_card())
     computer_cards.append(deal_card())
 
+while not is_game_over: 
+    user_score = calculate_score(user_cards)
+    computer_score = calculate_score(computer_cards)
+    print(f"Your cards are {user_cards} and your score is {user_score}")
+    print(f"Dealer's first card: {computer_cards[0]}")
 
-user_score = calculate_score(user_cards)
-computer_score = calculate_score(computer_cards)
-print(f"Your cards are {user_cards} and your score is {user_score}")
-print(f"Dealer's first card: {computer_cards[0]}")
-
-if user_score == 0 or computer_score == 0 or user_score >21:
-    is_game_over = True
-else:
-    user_should_deal = input("Type 'y' to get another card. Type 'n' to pass: ")
-    if user_should_deal == "y":
-        user_cards.append(deal_card())
-    else:
+    if user_score == 0 or computer_score == 0 or user_score >21:
         is_game_over = True
+    else:
+        user_should_deal = input("Type 'y' to get another card. Type 'n' to pass: ")
+        if user_should_deal == "y":
+            user_cards.append(deal_card())
+        else:
+            is_game_over = True
+
+# (12). Computer should draw if less than 17, but stop when 21 or over
+while computer_score != 0 and computer_score <17:
+    computer_cards.append(deal_card())
+    """computer_score is defined in while loop above. If no value, undefined"""
+    computer_score = calculate_score(computer_cards)
