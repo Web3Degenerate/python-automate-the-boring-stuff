@@ -26,8 +26,13 @@ def compare(user_score, computer_score):
     if user_score == computer_score: 
         return "Draw "
     elif computer_score == 0:
-       return "lose, opponent has Blackjack" 
-
+       return "lose, Dealer has Blackjack" 
+    elif user_score == 0:
+        return "Win, with a blackjack"
+    elif user_score >21:
+        return "You busted out"
+    elif computer_score >21:
+        return "Dealer busted! You win"
 
 user_cards = []
 computer_cards = []
