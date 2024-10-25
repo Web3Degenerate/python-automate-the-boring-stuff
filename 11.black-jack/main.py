@@ -21,6 +21,14 @@ def calculate_score(cards):
     return sum(cards)
 
 
+#TODO 13
+def compare(user_score, computer_score):
+    if user_score == computer_score: 
+        return "Draw "
+    elif computer_score == 0:
+       return "lose, opponent has Blackjack" 
+
+
 user_cards = []
 computer_cards = []
 computer_score = -1 #to prevent computer_score from being undefined
