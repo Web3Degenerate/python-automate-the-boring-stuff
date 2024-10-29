@@ -85,4 +85,6 @@ while computer_score != 0 and computer_score <17:
 
 
 #Final comparing of user vs dealer score: 
-compare(user_score, computer_score)
+print(f"Your final hand {user_cards}, Your hand total: {user_score}")
+print(f"Dealer final hand {computer_cards}, Dealer hand total: {computer_score}")
+print(compare(user_score, computer_score))
