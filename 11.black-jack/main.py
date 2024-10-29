@@ -22,17 +22,21 @@ def calculate_score(cards):
 
 
 #TODO 13
-def compare(user_score, computer_score):
-    if user_score == computer_score: 
+def compare(u_score, c_score):
+    if u_score == c_score: 
         return "Draw "
-    elif computer_score == 0:
+    elif c_score == 0:
        return "lose, Dealer has Blackjack" 
-    elif user_score == 0:
+    elif u_score == 0:
         return "Win, with a blackjack"
-    elif user_score >21:
+    elif u_score >21:
         return "You busted out"
-    elif computer_score >21:
+    elif c_score >21:
         return "Dealer busted! You win"
+    elif u_score > c_score:
+        return "You win this hand!"
+    else:
+        return "Dealer wins...again."
 
 user_cards = []
 computer_cards = []
@@ -78,3 +82,7 @@ while computer_score != 0 and computer_score <17:
     computer_cards.append(deal_card())
     """computer_score is defined in while loop above. If no value, undefined"""
     computer_score = calculate_score(computer_cards)
+
+
+#Final comparing of user vs dealer score: 
+compare(user_score, computer_score)
