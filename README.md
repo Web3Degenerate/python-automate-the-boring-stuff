@@ -37,4 +37,11 @@ card = random.choice(cards)
 ```
 
 ---
-7. 
+7.  Use _ in loop instead of rando variable: 
+
+    """If you don't need a variable you can use an underscore _ """
+    for _ in range(2):
+
+---
+
+8. 
