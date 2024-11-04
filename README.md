@@ -44,4 +44,24 @@ card = random.choice(cards)
 
 ---
 
-8. 
+8. The **global** keyword to import global sccope into a function
+
+```py
+
+enemies = 1
+
+
+def increase_enemies():
+    global enemies # USE GLOBAL KEYBOARD to change our global variable `enemies`
+    # enemies = 37
+    enemies += 1
+    print(f"enemies inside function: {enemies}")
+
+
+increase_enemies()
+print(f"enemies outside function: {enemies}")
+```
+
+---
+
+9. 

@@ -15,7 +15,8 @@ def create_enemy():
     #can only print newer_enemy within function
     print(newer_enemy)
 
-print(newer_enemy) #out of scope now that our if stmt is in a function
+# newer_enemy NOT DEFINED ERROR if you tried to print create_enemy() local function out here *******
+#print(newer_enemy) #out of scope now that our if stmt is in a function
 
 create_enemy() #prints Skeleton
 
