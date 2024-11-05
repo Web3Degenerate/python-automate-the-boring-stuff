@@ -64,4 +64,17 @@ print(f"enemies outside function: {enemies}")
 
 ---
 
-9. 
+9. [ASCII Art generator](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20)
+
+---
+
+10. From random module import `randint` 
+
+```py
+from random import randint 
+
+```
+
+---
+
+11. 
