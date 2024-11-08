@@ -6,14 +6,7 @@ EASY_LEVEL_TURNS = 10
 HARD_LEVEL_TURNS = 5
 
 
-# Opening message to user
-print('Welcome to the Guessing Game')
-print('Guess a number between 1 and 100')
 
-#Choose a number b/t 1 - 100
-answer = randint(1, 100)
-#For testing, print out the answer: 
-print(f"Psssst, the correct answer is {answer}")
 
 # Function to check user guess to randomly generated answer:
 def check_answer(user_guess, actual_answer):
@@ -35,17 +28,34 @@ def set_difficulty():
         # turns = HARD_LEVEL_TURNS
         return HARD_LEVEL_TURNS
 
-# Set difficulty
-turns = set_difficulty()
-print(f"You have {turns} attempts remaining to guess the number.")
 
-# Let user guess a number
-guess = int(input("Make a guess: "))
+def game(): 
+    # Opening message to user
+    print('Welcome to the Guessing Game')
+    print('Guess a number between 1 and 100')
 
-# Check number against original number.
-check_answer(guess, answer)
+    #Choose a number b/t 1 - 100
+    answer = randint(1, 100)
+    #For testing, print out the answer: 
+    print(f"Psssst, the correct answer is {answer}")
 
-#Track number of guesses / turns
 
+    # Set difficulty
+    turns = set_difficulty()
+    print(f"You have {turns} attempts remaining to guess the number.")
+
+    guess = 0
+    # Let user guess again
+    while guess != answer: 
+
+        # Let user guess a number
+        guess = int(input("Make a guess: "))
+
+        # Check number against original number.
+        check_answer(guess, answer)
+
+    #Track number of guesses / turns
+
+game()
 
 #repeat the guessing of they got it wrong
