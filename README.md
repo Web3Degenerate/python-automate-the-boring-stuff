@@ -77,4 +77,8 @@ from random import randint
 
 ---
 
-11. 
+11. Run [your python code through Python Tutor](https://pythontutor.com/visualize.html#mode=edit) to see it run step by step. 
+
+---
+
+12. 
