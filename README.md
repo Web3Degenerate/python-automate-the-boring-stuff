@@ -79,6 +79,13 @@ from random import randint
 
 11. Run [your python code through Python Tutor](https://pythontutor.com/visualize.html#mode=edit) to see it run step by step. 
 
+Shown in __*See Video 92. - 12.Number-Guessing-Game/number_guessing.py*__
+
 ---
 
-12. 
+12. Reminder, you can just use the `return` key to exit a function if desired 
+__*See 12.Number-Guessing-Game/number_guessing.py*__
+
+---
+
+13. 
