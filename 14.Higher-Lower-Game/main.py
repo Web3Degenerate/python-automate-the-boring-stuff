@@ -15,6 +15,14 @@ account_b = random.choice(data)
 if account_a == account_b:
     account_b = random.choice(data)
 
+
+def format_data(account):
+    # Format the account data into printable format
+    account_name = account_a["name"]
+    account_descr = account_a["description"]
+    account_country = account_a["country"]
+    print(f"{account_name}, a {account_descr}, from {account_country}")
+
 # Ask user for a guess
 
 
