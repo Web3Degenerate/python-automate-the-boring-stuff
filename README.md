@@ -88,4 +88,9 @@ __*See 12.Number-Guessing-Game/number_guessing.py*__
 
 ---
 
-13. 
+13. Set user input to all lower case with `.lower()` 
+
+```py
+guess = input("Who has more followers, Type 'A' or 'B': ").lower()
+
+```
