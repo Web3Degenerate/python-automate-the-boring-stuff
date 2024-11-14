@@ -1,10 +1,21 @@
 
 # Display Art
-from highlowart import logo
+from highlowart import logo, vs
 print(logo)
 
 # Import game_data
 from game_data import data
+
+
+
+def format_data(account):
+    # Format the account data into printable format
+    account_name = account_a["name"]
+    account_descr = account_a["description"]
+    account_country = account_a["country"]
+    # print(f"{account_name}, a {account_descr}, from {account_country}")
+    return f"{account_name}, a {account_descr}, from {account_country}"
+
 
 # Generate a random account from game_data.py
 import random 
@@ -16,12 +27,9 @@ if account_a == account_b:
     account_b = random.choice(data)
 
 
-def format_data(account):
-    # Format the account data into printable format
-    account_name = account_a["name"]
-    account_descr = account_a["description"]
-    account_country = account_a["country"]
-    print(f"{account_name}, a {account_descr}, from {account_country}")
+print(f"Comare A: {format_data(account_a)}.")
+print(vs)
+print(f"Against B: {format_data(account_b)}.")
 
 # Ask user for a guess
 
