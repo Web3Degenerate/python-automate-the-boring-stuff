@@ -3,11 +3,13 @@
 from highlowart import logo, vs
 print(logo)
 
+# Generate a random account from game_data.py
+import random 
+
 # Import game_data
 from game_data import data
 
-# Generate a random account from game_data.py
-import random 
+
 
 def format_data(account):
     """ Format the account data into printable format"""
