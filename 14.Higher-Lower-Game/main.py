@@ -40,6 +40,7 @@ account_a = random.choice(data)
 account_b = random.choice(data)
 
 if account_a == account_b:
+    #set account b to a random selection from our data set
     account_b = random.choice(data)
 
 
