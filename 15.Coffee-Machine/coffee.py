@@ -32,6 +32,25 @@ resources = {
 }
 
 
+def is_resource_sufficient(order_ingredients): 
+    """Returns True when order can be made, False if ingredients are insufficient"""
+    # Takes dictionary sepcified {'ingredients': {'water': 200, 'milk': 150, 'coffee': 24}, 'cost': 2.5}
+    # is_enough = True
+    for item in order_ingredients:
+        if order_ingredients[item] >= resources[item]: # water:200 not >= water: 300
+            print(f"Sorry, there is not enough {item}.")
+            return False #return is_enough = False
+    return True  # return is_enough
+
+def process_coins():
+    """Returns the total calculated from coins inserted"""
+    print("Please insert coins.")
+    total = int(input("How many quarters?: ")) * 0.25
+    total += int(input("How many dimes?: ")) * 0.1
+    total += int(input("How many nickles?: ")) * 0.05
+    total += int(input("How many pennies?: ")) * 0.01
+    return total
+
 is_on = True
 
 while is_on: 
@@ -40,6 +59,11 @@ while is_on:
         is_on = False
     elif choice == "report":
         print(f"Water: {resources['water']}ml")
-        print(f"Milk: {resources['water']}ml")
-        print(f"Coffee: {resources['water']}g")
+        print(f"Milk: {resources['milk']}ml")
+        print(f"Coffee: {resources['coffee']}g")
         print(f"Money: ${profit}")
+    else: 
+        drink = MENU[choice]
+        print(drink)
+        if is_resource_sufficient(drink["ingredients"]): # MENU[choice]["ingredients"]
+            print("ok")
