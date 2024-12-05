@@ -51,6 +51,21 @@ def process_coins():
     total += int(input("How many pennies?: ")) * 0.01
     return total
 
+def is_transaction_successful(money_received, drink_cost):
+    """ Returns True when payment is acccepted, or False if money insufficent"""
+    if money_received >= drink_cost:
+        #calculate user's change
+        change = round(money_received - drink_cost, 2)
+        print(f"Here is your change ${change}")
+        #reach our global scope profit variable above with keyword 'global'
+        global profit
+        profit += drink_cost 
+        return True
+    else: 
+        print("Sorry, that's not enough money. Money refunded")
+        return False 
+
+
 is_on = True
 
 while is_on: 
@@ -66,4 +81,9 @@ while is_on:
         drink = MENU[choice]
         print(drink)
         if is_resource_sufficient(drink["ingredients"]): # MENU[choice]["ingredients"]
-            print("ok")
+            # print("ok")
+            payment = process_coins() #capture user's payment
+
+            #call our transaction check function 
+            is_transaction_successful(payment, drink["cost"]) # Menu["espresso"]["cost"]
+
