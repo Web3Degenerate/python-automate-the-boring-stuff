@@ -66,6 +66,15 @@ def is_transaction_successful(money_received, drink_cost):
         return False 
 
 
+def make_coffee(drink_name, order_ingredients):
+    """Deduct the required ingredients from the resources"""
+    #loop through the ingredients
+    for item in order_ingredients: 
+        #subtract the order ingredients
+        resources[item] -= order_ingredients[item]
+    print(f"Here is your {drink_name}.")
+
+
 is_on = True
 
 while is_on: 
@@ -84,6 +93,7 @@ while is_on:
             # print("ok")
             payment = process_coins() #capture user's payment
 
-            #call our transaction check function 
-            is_transaction_successful(payment, drink["cost"]) # Menu["espresso"]["cost"]
-
+            #call our transaction check function - IF payment is successful
+            if is_transaction_successful(payment, drink["cost"]): # Menu["espresso"]["cost"]
+                #pass in drink_name, order_ingredients
+                make_coffee(choice, drink["ingredients"])
