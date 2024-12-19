@@ -2,13 +2,12 @@
 
 1. len()
 
-
 2. str() and int()
 
 ...
 
-
 3. title() - Uppercase first letter of each word
+
 ```py
 
 def function(text):
@@ -17,14 +16,15 @@ def function(text):
 ```
 
 4. Append method
-`correct_letters_list.append(letter)`
-
+   `correct_letters_list.append(letter)`
 
 ---
-5. Index
-`alphabet.index(letter)`
 
-----
+5. Index
+   `alphabet.index(letter)`
+
+---
+
 6. choice() with import random
 
 ```python
@@ -37,7 +37,8 @@ card = random.choice(cards)
 ```
 
 ---
-7.  Use _ in loop instead of rando variable: 
+
+7.  Use \_ in loop instead of rando variable:
 
     """If you don't need a variable you can use an underscore _ """
     for _ in range(2):
@@ -68,34 +69,34 @@ print(f"enemies outside function: {enemies}")
 
 ---
 
-10. From random module import `randint` 
+10. From random module import `randint`
 
 ```py
-from random import randint 
+from random import randint
 
 ```
 
 ---
 
-11. Run [your python code through Python Tutor](https://pythontutor.com/visualize.html#mode=edit) to see it run step by step. 
+11. Run [your python code through Python Tutor](https://pythontutor.com/visualize.html#mode=edit) to see it run step by step.
 
-Shown in __*See Video 92. - 12.Number-Guessing-Game/number_guessing.py*__
-
----
-
-12. Reminder, you can just use the `return` key to exit a function if desired 
-__*See 12.Number-Guessing-Game/number_guessing.py*__
+Shown in **_See Video 92. - 12.Number-Guessing-Game/number_guessing.py_**
 
 ---
 
-13. Set user input to all lower case with `.lower()` 
+12. Reminder, you can just use the `return` key to exit a function if desired
+    **_See 12.Number-Guessing-Game/number_guessing.py_**
+
+---
+
+13. Set user input to all lower case with `.lower()`
 
 ```py
 guess = input("Who has more followers, Type 'A' or 'B': ").lower()
 
 ```
 
-14. In 15.Coffee-Machine/coffee.py we used the round function: 
+14. In 15.Coffee-Machine/coffee.py we used the round function:
 
 ```py
 change = round(money_received - drink_cost, 2)
@@ -104,4 +105,19 @@ change = round(money_received - drink_cost, 2)
 
 ---
 
-15. 
+15. Import portion of external module (_Turtle module in lesson 16_)
+
+```py
+#Alternatively, use from - import just the Turtle class
+from turtle import Turtle
+
+# Use parenthesis to actually construct the turtle object
+timmy = turtle.Turtle()
+
+print(timmy) #prints object <turtle.Turtle object at 0x0000026AD0848F10>
+
+```
+
+---
+
+16.
