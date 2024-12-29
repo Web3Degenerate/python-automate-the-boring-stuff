@@ -18,3 +18,6 @@ timmy = Turtle()
 
 print(timmy) #prints object <turtle.Turtle object at 0x0000026AD0848F10> (location saved at in computer's memory)
 
+my_screen = Screen()
+print(my_screen.canvheight)
+my_screen.exitonclick() #program runs until user closes it.
