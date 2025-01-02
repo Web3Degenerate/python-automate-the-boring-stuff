@@ -120,4 +120,16 @@ print(timmy) #prints object <turtle.Turtle object at 0x0000026AD0848F10>
 
 ---
 
-16.
+16. exitonclick() method from Turtle module
+
+```py
+my_screen = Screen()
+print(my_screen.canvheight)
+my_screen.exitonclick() #program runs until user closes it.
+
+```
+
+---
+
+
+17. 
