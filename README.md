@@ -120,14 +120,13 @@ print(timmy) #prints object <turtle.Turtle object at 0x0000026AD0848F10>
 
 ---
 
-16. exitonclick() method from Turtle module
+16. Python Packages at [pypi.org](https://pypi.org/)
 
-```py
-my_screen = Screen()
-print(my_screen.canvheight)
-my_screen.exitonclick() #program runs until user closes it.
+_See video 111 (section 16)_, introducing pypi.org packages.
 
-```
+import the [PrettyTable](https://pypi.org/project/prettytable/) ascii table plugin
+
+with: `pip install PrettyTable` 
 
 ---
 
