@@ -26,5 +26,9 @@ while is_on:
     else: 
         #check that we have enough resources for the selected drink with find_drink(order_name) method
         drink = menu.find_drink(choice)
-        print(drink)
-        
+        #print(drink)
+        # print(coffee_maker.is_resource_sufficient(drink))
+        if coffee_maker.is_resource_sufficient(drink):
+            if money_machine.make_payment(drink.cost): #return true if payment successful
+                """Make the coffee """
+                coffee_maker.make_coffee(drink)
