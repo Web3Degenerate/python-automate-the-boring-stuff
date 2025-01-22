@@ -28,7 +28,10 @@ while is_on:
         drink = menu.find_drink(choice)
         #print(drink)
         # print(coffee_maker.is_resource_sufficient(drink))
-        if coffee_maker.is_resource_sufficient(drink):
-            if money_machine.make_payment(drink.cost): #return true if payment successful
-                """Make the coffee """
-                coffee_maker.make_coffee(drink)
+
+        #Combine our two if statements into a single check with AND
+        # if coffee_maker.is_resource_sufficient(drink):
+        #     if money_machine.make_payment(drink.cost): #return true if payment successful
+        if coffee_maker.is_resource_sufficient(drink) and money_machine.make_payment(drink.cost):
+            """Make the coffee """
+            coffee_maker.make_coffee(drink)
