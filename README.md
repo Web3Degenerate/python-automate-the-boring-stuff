@@ -165,4 +165,21 @@ while is_on:
 ---
 
 
-17. 
+17. Quiz Class
+
+**To create an empty class** use the **pass** keyword
+
+```py
+class User:
+    """To create an empty class, use the pass keyword"""
+    pass
+
+
+user_1 = User()
+
+```
+
+
+---
+
+18. 
