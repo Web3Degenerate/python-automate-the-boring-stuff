@@ -179,6 +179,12 @@ user_1 = User()
 
 ```
 
+**Naming Conventions**
+Classes use `PascalCase`
+distinguished from 
+`camelCase`
+`snake_case`
+
 
 ---
 
