@@ -180,10 +180,10 @@ user_1 = User()
 ```
 
 **Naming Conventions**
-Classes use `PascalCase`
-distinguished from 
-`camelCase`
-`snake_case`
+Classes use `PascalCase`. Pretty much everything else is `snake_case`. 
+
+Python doesn't commonly use `camelCase`
+
 
 
 ---
