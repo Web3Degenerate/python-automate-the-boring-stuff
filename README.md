@@ -185,6 +185,81 @@ Classes use `PascalCase`. Pretty much everything else is `snake_case`.
 Python doesn't commonly use `camelCase`
 
 
+### Class Constructors
+- Constructor - what happen when object is created, hence when it is initialized. 
+- use the init function, in python: 
+
+```py
+def __init__(self):
+
+```
+
+
+**In our User Example**
+
+```py
+class User:
+    def __init__(self, user_id, user_name):
+        # set up user id place holder
+        self.id = user_id
+        self.user_name = user_name
+        # We can set up default values, like followers = 0
+        self.followers = 0
+
+```
+
+
+### Method is a function attached to an object. 
+_like in a class_ 
+
+Our example of adding a method to simple User class and calling it on our first User object. 
+
+```py
+
+
+class User:
+    def __init__(self, user_id, user_name):
+        # set up user id place holder
+        self.id = user_id
+        self.user_name = user_name
+        # We can set up default values, like followers = 0
+        self.followers = 0
+        #set up for method with two params example below
+        self.following = 0
+
+    #passing in self, when method is called, it knows which object called it.
+    def new_followers(self):
+        self.followers += 2
+
+user_1 = User("01", "Al")
+print(user_1.user_name)
+user_1.followers = 1
+print(f'{user_1.user_name} has {user_1.followers} followers') # 1 follower
+
+#DON'T HAVE TO PASS IN SELF ie user_1.new_followers(user_1)
+user_1.new_followers()
+print(f'Now, {user_1.user_name} has {user_1.followers} followers') # 3 followers
+
+```
+
+### Example of method taking both self and user params
+
+```py
+
+
+    def follow(self, user):
+        user.followers += 1
+        self.following += 1
+
+user_1 = User("001", "Alba")
+user_2 = User('002', 'Barbara')
+user_1.follow(user_2) #implied (self/user_1, user_2)
+print(f'Now, after method examples, {user_1.user_name} has {user_1.followers} followers and {user_2.user_name} has {user_2.followers} followers')
+# Alba 0 followers
+# Barabra 1 followers
+
+```
+
 
 ---
 
