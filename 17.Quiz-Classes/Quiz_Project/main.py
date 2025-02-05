@@ -1,5 +1,6 @@
 from question_model import Question
 from data import question_data
+from quiz_brain import QuizBrain
 
 
 # Loop through the question_data list of dictionaries and add to our question_bank LIST (array)
@@ -32,4 +33,8 @@ for x in question_data:
 print(f'First Question: {question_bank[0].text} \n First Answer: {question_bank[0].answer}')
 
 
-# Pick up in Sec 17 - V.122
+# In Sec 17 - V.122 - Create a new QuizBrain Object
+quiz = QuizBrain(question_bank)
+quiz.next_question()
+
+# Resume at Sec 17 - V.123.
