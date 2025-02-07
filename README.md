@@ -261,6 +261,10 @@ print(f'Now, after method examples, {user_1.user_name} has {user_1.followers} fo
 ```
 
 
+## Open tdb Trivia API [OpenTDB.com](https://opentdb.com/api_config.php)
+- Select question number, type, etc. and select **Generate API URL**
+- Get something like `https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=boolean` 
+
 ---
 
 18. 
