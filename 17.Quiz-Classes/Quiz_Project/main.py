@@ -36,8 +36,11 @@ print(f'First Question: {question_bank[0].text} \n First Answer: {question_bank[
 # In Sec 17 - V.122 - Create a new QuizBrain Object
 quiz = QuizBrain(question_bank)
 # quiz.next_question()
-
-# Resume at Sec 17 - V.123.
+ 
+# In at Sec 17 - V.123.
 # while quiz.still_has_questions: # FORGOT () FOR METHOD!!
 while quiz.still_has_questions():
     quiz.next_question()
+
+
+# Resume at Sec 17 - V. 124 - Check answers

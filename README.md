@@ -263,4 +263,38 @@ print(f'Now, after method examples, {user_1.user_name} has {user_1.followers} fo
 
 ---
 
-18. 
+18. **Turtle GUI Documentation** [_See methods & docs here_](https://docs.python.org/3/library/turtle.html#turtle-methods)
+
+_Turtle model uses_ [TKinter documentation](https://docs.python.org/3/library/tkinter.html)
+
+
+## for _ in range(x) loop
+Here, do something 4 times: 
+
+```py
+for _ in range(4):
+    timmy_the_turtle.forward(100)
+    timmy_the_turtle.right(90)
+
+```
+
+
+### Importing Modules
+
+**Basic Import**
+- **Keyword** + **Module name**
+- from turtle
+
+- Then you invoke a class with:
+
+- `timmy = turtle.Turtle()` 
+
+
+- **Keyword** + **Module name** + **keyword** + **Thing in Module**
+- from turtle import Turtle
+
+- Then you invoke an object with: 
+
+- `timmy = Turtle()` 
+
+---
