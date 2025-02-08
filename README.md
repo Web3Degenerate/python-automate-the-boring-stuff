@@ -283,7 +283,7 @@ for _ in range(4):
 ```
 
 
-### Importing Modules
+### Importing Modules (S18.V130)
 
 **Basic Import**
 - **Keyword** + **Module name**
@@ -309,4 +309,44 @@ for _ in range(4):
 - from turtle import *
 
 
+**Import Alias (makes more sense with longer module names)**
+- import turtle-asd_fgh_asdf_asd as t
+- `timmy = t.Turtle()` 
+
+
+### Installing Modules
+
+- Some modules can't be imported **because they are not packaged with the standard python code**
+- So install them with `pip` from [pypi.org](https://pypi.org)
+- Example: [**heroes 1.0.2**](https://pypi.org/project/heroes/)
+
+
+- installing a package, installs it in your local working python environment. 
+- This is on a per project basis. 
+- Get's stored in `.venv/lib/python3.X/` in pycharm or `.venv/lib/` in VS directory, your virtual environment. 
+
+
+**The need for Virtual Environments**
+- Python 3 is not backwards compatible with Python 2. 
+- Virtual environments create a small sandbox for our project
+- Avoids global conflicts over time
+
 ---
+
+
+19. 
+
+
+
+
+
+---
+### Note on git merge
+
+- _Fell behind current state and tried to push up changes. (2/8/25)_
+- Followed these commands from [freecodecamp article](https://www.freecodecamp.org/news/git-pull-force-how-to-overwrite-local-changes-with-git/)
+
+1. `git fetch`
+2. `git reset --hard HEAD`
+3. `git merge origin` 
+    - this returned error message, and then followed conflict manager in VS code
