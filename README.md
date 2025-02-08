@@ -294,11 +294,19 @@ for _ in range(4):
 - `timmy = turtle.Turtle()` 
 
 
+**Import with From**
+
 - **Keyword** + **Module name** + **keyword** + **Thing in Module**
 - from turtle import Turtle
 
 - Then you invoke an object with: 
 
 - `timmy = Turtle()` 
+
+
+**Import All with From**
+- **Keyword** + **Module name** + **keyword** + **Thing in Module**
+- from turtle import *
+
 
 ---
