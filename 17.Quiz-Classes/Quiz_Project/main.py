@@ -19,8 +19,11 @@ question_data = [
 
 question_bank = [] #Create List (array)
 for x in question_data:
-    x_text = x["text"]
-    x_answer = x["answer"]
+    # x_text = x["text"]
+    # x_answer = x["answer"]
+    #Changed to match OpenTDB.com Trivia Questions
+    x_text = x["question"]
+    x_answer = x["correct_answer"]
     """2. Create a Question object from each entry in question_data"""
     new_question = Question(x_text, x_answer)
     """3. Append each Question object to the question_bank"""
@@ -42,5 +45,6 @@ quiz = QuizBrain(question_bank)
 while quiz.still_has_questions():
     quiz.next_question()
 
-
-# Resume at Sec 17 - V. 124 - Check answers
+print("****You have completed the Quiz*******\n")
+#alternative: {len(question_bank)}
+print(f"Your final score was {quiz.user_score}/{quiz.question_number}")

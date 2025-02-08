@@ -7,6 +7,7 @@ class QuizBrain:
     def __init__(self, question_list): 
         self.question_number = 0
         self.question_list = question_list
+        self.user_score = 0
 
 
     def still_has_questions(self): 
@@ -33,7 +34,27 @@ class QuizBrain:
         
         #or better solution, += 1
         self.question_number += 1
-        input(f"Q.{self.question_number}: {current_question.text} (True/False)?: ")
+        # input(f"Q.{self.question_number}: {current_question.text} (True/False)?: ")
+
+        #check user input, so save it to variable and pass to new check_answer function
+        user_answer = input(f"Q.{self.question_number}: {current_question.text} (True/False)?: ")
+        self.check_answer(user_answer, current_question.answer)
+
+
+
+    def check_answer(self, user_answer, correct_answer):
+        """Check the .lower() version to avoid true NOT equal True"""
+        if user_answer.lower() == correct_answer.lower():
+            self.user_score += 1
+            print(f"Correct, the answer was {correct_answer}. Your Score {self.user_score}")
+        else:
+            # self.user_score -= 1 #Don't subtract score
+            print(f"INCORRECT, the answer was {correct_answer}. Your Score {self.user_score}")
+        
+        # Outside the if block, just print the correct answer each time
+            # print(f"The correct answer was {correct_answer}")
+        print(f"Your Current Score: {self.user_score}/{self.question_number} questions.")
+        print("\n")
 
 
 
