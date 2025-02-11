@@ -32,25 +32,48 @@ tim.color("red")
 # Draw Shapes (various angles)
 # 5 sides - 360/5 = 72 degrees
 
-#Function dynamically handles the num_sides
-def custom_draw_shape(num_sides):
-    # Equation: 
-    # num_sides = 5
-    angle = 360 / num_sides
-    for _ in range(num_sides):
-        tim.forward(100)
-        tim.right(angle)
+# #Function dynamically handles the num_sides
+# def custom_draw_shape(num_sides):
+#     # Equation: 
+#     # num_sides = 5
+#     angle = 360 / num_sides
+#     for _ in range(num_sides):
+#         tim.forward(100)
+#         tim.right(angle)
+
+# #Ranom Colors
+# colors = ["red", "blue", "black", "green"]
+
+# '''Make the custom_draw_shape start at 3 and go up to 10'''
+# # With for range() function, set the outter limit (2nd param) at desired plus 1
+# ## for range(3, 11) would be 3 to 10
+# ### you can use _ or something like for shape_side_n in range(3, 11): 
+# for _ in range(3, 11):
+#     tim.color(random.choice(colors))
+#     custom_draw_shape(_)
+
 
 #Ranom Colors
 colors = ["red", "blue", "black", "green"]
 
-'''Make the custom_draw_shape start at 3 and go up to 10'''
-# With for range() function, set the outter limit (2nd param) at desired plus 1
-## for range(3, 11) would be 3 to 10
-### you can use _ or something like for shape_side_n in range(3, 11): 
-for _ in range(3, 11):
-    tim.color(random.choice(colors))
-    custom_draw_shape(_)
+#Random Directions 0 - east, 90 - north, 180 - west, 270 - south
+directions = [0, 90, 180, 270]
+
+tim.pensize(15) #turtle built in pensize() method
+
+#turtle built in speed() method - slowest, slow, normal, fast, fastest
+speed_options = ["slowest", "slow", "normal", "fast", "fastest"]
+
+# Move 200 times
+for _ in range(200): 
+    tim.color(random.choice(colors)) #random colors
+    tim.speed(random.choice(speed_options))
+    tim.forward(30)
+    #turtle built in function setheading()
+    tim.setheading(random.choice(directions))
+
+
+"""RESUME AT SEC 18, V.134 Python Tuples and Generate random RGB colors"""
 
 
 #=============== Draw to screen command ===================================

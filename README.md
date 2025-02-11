@@ -331,6 +331,9 @@ for _ in range(4):
 - Virtual environments create a small sandbox for our project
 - Avoids global conflicts over time
 
+
+**RESUME AT SEC 18, V.134 Python Tuples and Generate random RGB colors**
+
 ---
 
 
