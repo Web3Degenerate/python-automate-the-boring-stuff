@@ -334,12 +334,124 @@ for _ in range(4):
 
 **RESUME AT SEC 18, V.134 Python Tuples and Generate random RGB colors**
 
+S18.V.134 - **Python Tuples**
+- CAN NOT CHANGE values in a Tuple (No item assignment)
+
+```py
+
+#Tuple (ordered)
+my_tuple = (1, 3, 8)
+my_tuple[0] #retrieves first item, here 1
+#can't change tuple vlaue
+my_typle[1] = 12 #returns error: 'tuple' object not support item assignment
+
+#List
+my_list = [1, 3, 8]
+
+```
+
+
 ---
 
 
 19. 
 
 
+
+---
+
+20. 
+
+
+---
+
+21. 
+
+
+---
+
+
+22. 
+
+
+---
+
+
+23. 
+
+
+---
+
+
+24. 
+
+
+---
+
+
+25. CSV Data and Pandas 
+
+
+- Download [the sample csv data from this link](https://docs.google.com/spreadsheets/d/1Rs1CKjiagTeXa53212JkjRSDu-tx77_YxEgGdkv5zRY/edit?gid=0#gid=0). 
+- Save as `weather_data.csv` 
+
+
+### Importing the CSV data
+
+1. One option is with .readlines() but this will be harder to parse later
+
+```py
+# use readlines() method to create a list named data from values in weather_data.csv
+# Use relative file path (same directory) to read weather_data.csv
+
+with open("weather_data.csv") as data_file: 
+    """Use readlines() not just read() to get each line as item in our list"""
+    data = data_file.readlines()
+    print(data)
+
+    # Returns our list: 
+    #['day,temp,condition\n', 'Monday,12,Sunny\n', 'Tuesday,14,Rain\n', 
+    # 'Wednesday,15,Rain\n', 'Thursday,14,Cloudy\n', 'Friday,21,Sunny\n', 
+    # 'Saturday,22,Sunny\n', 'Sunday,24,Sunny']
+
+```
+
+2. Second option is to use the built in `csv` module: 
+
+```py
+import csv
+
+with open("weather_data.csv") as data_file: 
+    data = csv.reader(data_file)
+    print(data)
+    # This creates a CSV READER Object
+    # <_csv.reader object at 0x000002126E0B7640>
+
+    """The CSV Reader Object can be LOOPED through"""
+    # each csv item is a single value
+    # The temperatures is in ROW index 1
+    temperatures = [] #empty temperatures list
+    for row in data:
+        if row[1] != "temp": #exclude the headers 
+            #Add each temperatures aka row index 1 to our list and convert to int
+            temperatures.append(int(row[1]))
+    print(temperatures)
+    
+    #returns [12, 14, 15, 14, 21, 22, 24]
+
+```
+
+
+## Pandas Python Data Analysis Library Visit [Pandas.pydata.org](https://pandas.pydata.org/docs/getting_started/index.html)
+
+- Helpful in particular with tabular data like our csv example. 
+
+- Pandas not built into python. Have to install it. 
+
+### Installing Pandas
+- You can install pandas from [PyPi.org at this link here](https://pypi.org/project/pandas/).
+
+- Run command `pip install pandas` 
 
 
 
