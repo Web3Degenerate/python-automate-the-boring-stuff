@@ -389,7 +389,7 @@ my_list = [1, 3, 8]
 ---
 
 
-25. CSV Data and Pandas 
+### 25. CSV Data and Pandas 
 
 
 - Download [the sample csv data from this link](https://docs.google.com/spreadsheets/d/1Rs1CKjiagTeXa53212JkjRSDu-tx77_YxEgGdkv5zRY/edit?gid=0#gid=0). 
@@ -453,6 +453,27 @@ with open("weather_data.csv") as data_file:
 
 - Run command `pip install pandas` 
 
+
+#### Panda Data Structures
+
+**two primary data structures in pandas**
+- 1 - Series (1-dimensional) - **like single column of csv**
+- 2 - DataFrame (2-dimensional) = **like our csv table data**
+
+
+```py
+import pandas
+
+data = pandas.read_csv("weather_data.csv")
+print(data) #prints out much better
+print(type(data)) # returns DataFrame: <class `pandas.core.frame.DataFrame`>
+
+print(data["temp"]) #just prints out temp column
+print(type(data["temp"])) # returns Panda Series <class `pandas.core.series.Series`>
+
+```
+
+- See [**Pandas API Reference Here**](https://pandas.pydata.org/docs/reference/series.html)
 
 
 ---
