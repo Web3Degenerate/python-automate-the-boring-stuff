@@ -476,6 +476,48 @@ print(type(data["temp"])) # returns Panda Series <class `pandas.core.series.Seri
 - See [**Pandas API Reference Here**](https://pandas.pydata.org/docs/reference/series.html)
 
 
+### Pandas Built in Methods
+
+**Average with .mean()**
+- Example with Average. (No average method in python)
+
+```py
+# [Average in Python] https://www.geeksforgeeks.org/find-average-list-python/
+avg = sum(temp_list) / len(temp_list)
+
+# Average with Pandas' built-in method .mean()
+data["temp"].mean()
+print(f'Mean with Panda .mean() method is: {data["temp"].mean()}')
+
+```
+
+**To Dictionary or To List**
+
+```py
+# Turn DataFrame into a Dictionary with Method to_dict()
+data_dict = data.to_dict()
+print(data_dict)
+
+# Turn Series into a List with Method to_list()
+temp_list = data["temp"].to_list()
+print(temp_list)
+# Then you can do all the things you can with a list, like return the length - len()
+print(f"The size of this list series is {len(temp_list)}")
+
+```
+
+### Pandas calling csv headers (CASE SENSITIVE!)
+
+**TWO was to call csv headers**
+- 1. `data["temp"]`
+- 2. `data.temp`
+
+
+
+---
+
+26. 
+
 ---
 ### Note on git merge
 
