@@ -63,3 +63,38 @@ print(data[data.day == "Monday"])
 # place into the data[]
 data[data.temp == data.temp.max()]
 print(data[data.temp == data.temp.max()]) #6 Sunday 24 Sunny
+
+# Pull up a specific Row - Monday (day column)
+# get the CONDITION column for just Monday's row
+monday = data[data.day == "Monday"]
+print(f"Monday's Condition column was {monday.condition}")
+
+# Convert Monday's Celsius Temperature to Fahrenheit
+monday_fahrenheit = monday.temp[0] * 9/5 + 32 #================> returns 53.6
+print(f"Monday's temp in F was {monday_fahrenheit}")
+
+
+print(f"Monday.temp is \n {monday.temp}") #returns 0  12
+                                        #        Name: temp, dtpye: int64 
+print(f"Monday.temp[0] is \n {monday.temp[0]}") #returns 12
+
+
+
+########### CREATE DATA FRAME FROM SCRATCH ###################################
+
+data_dict = {
+    "students": ["Amy", "James", "Angela"],
+    "scores": [76, 56, 65]
+}
+
+
+# Call our pandas library and then our DataFrame Class
+new_df = pandas.DataFrame(data_dict) # initalize that df class with our data_dict data
+print(new_df)
+
+
+## NOW WE CAN CONVERT OUR new_df DataFrame to csv with the .to_csv() method
+# Just needs the required param of the path you want to save csv file to.
+
+# SAME directory, just give it a name
+new_df.to_csv("new_df.csv")

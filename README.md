@@ -513,6 +513,30 @@ print(f"The size of this list series is {len(temp_list)}")
 - 2. `data.temp`
 
 
+### Pandas- Create Custom DataFrame and save to csv with .to_csv(<path><name>) 
+
+
+```py
+
+data_dict = {
+    "students": ["Amy", "James", "Angela"],
+    "scores": [76, 56, 65]
+}
+
+
+# Call our pandas library and then our DataFrame Class
+new_df = pandas.DataFrame(data_dict) # initalize that df class with our data_dict data
+print(new_df)
+
+
+## NOW WE CAN CONVERT OUR new_df DataFrame to csv with the .to_csv() method
+# Just needs the required param of the path you want to save csv file to.
+
+# SAME directory, just give it a name
+new_df.to_csv("new_df.csv")
+
+```
+
 
 ---
 
