@@ -538,6 +538,22 @@ new_df.to_csv("new_df.csv")
 ```
 
 
+## Squirrel Data Project
+
+- Download the squirrel csv file from [data.cityofnewyork.us](https://data.cityofnewyork.us/Environment/2018-Central-Park-Squirrel-Census-Squirrel-Data/vfnx-vebw/about_data)
+
+
+- Save CSV file as `squirrel_count_raw.csv` in project folder. 
+
+- Import pandas and pull in the raw data with 
+
+```py
+import pandas
+data = pandas.read_csv("squirrel_count_raw.csv")
+
+```
+
+
 ---
 
 26. 
