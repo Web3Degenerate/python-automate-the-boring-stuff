@@ -554,6 +554,33 @@ data = pandas.read_csv("squirrel_count_raw.csv")
 ```
 
 
+### Turn a column in our csv data into a list with pandas .to_list()
+
+- call the `to_list()` function on our column
+- This allows us to use things like `for .. in  x` 
+
+```py
+
+import pandas
+data = pandas.read_csv("50_states.csv")
+all_states = data.state.to_list()
+
+'''USE of if .. in is available ONLY because it has been converted into a LIST'''
+if answer_state in all_states: 
+
+    t = turtle.Turtle()
+    t.hideturtle() # hide it
+    t.penup() #no drawingour states table
+    state_data = data[data.state == answer_state]
+    t.goto(state_data.x.item(), state_data.y.item()) #move turtle to x, y coordinates of state
+    t.write(answer_state) #since we already verified user input above, use it to print
+
+
+```
+
+x
+
+
 ---
 
 26. 
