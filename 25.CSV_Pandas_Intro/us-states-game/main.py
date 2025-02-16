@@ -14,8 +14,9 @@ data = pandas.read_csv("50_states.csv")
 
 # data["state"] - pull the state column out as a key
 # data.state - pull the state column as an attribute
+
 # pull state column out and turn it into a list
-data.state.to_list()
+'''data.state.to_list()'''
 all_states = data.state.to_list()
 
 
@@ -44,7 +45,10 @@ if answer_state in all_states:
     # t.write(state_data.state[0]) #raise KeyError(key) from err
 
     # t.write(state_data.state) #prints out 34 Ohio Name: state, dtype: object
-    t.write(answer_state) #since we already verified user input above, use it to print
+    # t.write(answer_state) #since we already verified user input above, use it to print
+
+    '''pandas.Series.item - call .item() to get single value, here state name like so:'''
+    t.write(state_data.state.item())
 
     #Error: _tkinter.TclError: bad screen distance
     # bad data type. Coordinates are stored as strings, convert int

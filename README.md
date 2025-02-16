@@ -578,7 +578,17 @@ if answer_state in all_states:
 
 ```
 
-x
+#### Pandas .item() [_see pandas.Series.item docs here_](https://pandas.pydata.org/docs/reference/api/pandas.Series.item.html)
+
+- we used .item() to get a single text value from our csv table as shown below: 
+
+
+```py
+
+#Instead of t.write(answer_state)
+t.write(state_data.state.item())
+
+```
 
 
 ---
