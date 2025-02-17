@@ -334,7 +334,7 @@ for _ in range(4):
 
 **RESUME AT SEC 18, V.134 Python Tuples and Generate random RGB colors**
 
-S18.V.134 - **Python Tuples**
+S18.V.134 - **Python Tuples ()**
 - CAN NOT CHANGE values in a Tuple (No item assignment)
 
 ```py
@@ -349,6 +349,26 @@ my_typle[1] = 12 #returns error: 'tuple' object not support item assignment
 my_list = [1, 3, 8]
 
 ```
+
+
+#### RGP challenge (rbg_example.py)
+
+- create random int from the random module (`random.randint(0, 255)`)
+- and use a custom function to generate a random color using the rgb values from 0 - 255
+
+```py
+def random_color(): 
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    '''GENERATE our Tuple with the random values for RGB'''
+    # random_color = (r, g, b)
+    # return random_color
+    return (r, g, b)
+
+
+```
+
 
 
 ---
