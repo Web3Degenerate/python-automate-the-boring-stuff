@@ -370,6 +370,31 @@ def random_color():
 ```
 
 
+#### Spirograph - for _ in (range)
+- for in range can only take integers
+- division always returns float, even if whole number, ie 5.0
+
+```py
+
+def draw_spirograph(size_of_gap):    
+    '''(1) division always returns float, even if 10/2 = 5.0'''
+    '''(2) range() only take int, so wrap division in int()'''
+    for _ in range(int(360 / size_of_gap)):    
+        tim.color(random_color())
+        tim.circle(100) #param is the radius size
+            # print(tim.heading()) # returns 0.0
+            # current_heading = tim.heading()
+            # tim.setheading(current_heading + 10) #param takes angle
+        # REFACTOR to one line: 
+        # tim.setheading(tim.heading() + 10)
+        tim.setheading(tim.heading() + size_of_gap)
+
+#call custom function with size_of_gap = 5
+draw_spirograph(5)
+
+```
+
+x
 
 ---
 
