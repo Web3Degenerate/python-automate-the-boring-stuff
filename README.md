@@ -635,10 +635,101 @@ t.write(state_data.state.item())
 
 ```
 
+#### Break statement in our while loop with `for in` and `for not in` 
+
+- Create a list of states not answered correctly
+- Break out of the while loop when user input = `Exit`
+- use `.title()` output for force any input to first letter upper case 
+-- such as `DeLaWarE` to be `Delaware`
+- Finally, convert our new list of missed states to a DataFrame
+- Export this missing states list to a csv file in the same directory
+
+```py
+    # BREAK out of while loop when user input = 'Exit'
+    if answer_state == 'Exit':
+        missing_states = []
+        for state in all_states:
+            if state not in guessed_states:
+                missing_states.append(state)
+        # Turn missing_states list into a DataFrame
+        new_data = pandas.DataFrame(missing_states)
+        # Export to CSV in same directory
+        new_data.to_csv("states_to_learn.csv")
+        break
+
+```
 
 ---
 
-26. 
+## 26. List Comprehension
+
+
+#### Python Sequences
+- list
+- range
+- string
+- tuple
+
+### List Comprehension format: 
+
+```py
+# Creating new list (Old way)
+numbers = [1, 2, 3]
+# new_list =[]
+# for n in numbers:
+#     new_list.append(n + 1)
+
+'''List Comprehension format:
+new_list = [new_item for item in list]'''
+new_list = [n+1 for n in numbers]
+
+
+'''STRING example'''
+name = "Angela"
+letters_list = [n for n in name] #[letter for letter in name]
+print(letters_list) # returns ['A', 'n', 'g', etc]
+
+
+'''Range example'''
+my_range = range(1,5)
+new_range = [n*2 for n in my_range]
+print(new_range) #returns 2, 4, 6, 8
+
+```
+
+
+#### Conditional List Comprehension
+
+```py
+## CONDITIONAL LIST COMPREHENSION **********************************************
+
+# FORMAT: add `if test` at end
+# new_list = [new_item for item in list if test]
+
+test_range = range(1,11)
+evens_in_test_range = [num for num in test_range if num % 2 == 0]
+print(evens_in_test_range) #returns [2, 4, 6, 8, 10]
+
+#same with list of sting names of various lenghts in list called names
+names = ['Alex', 'Beth', 'Caroline', 'Dave', 'Eleanor', 'Freddie']
+short_names = [name for name in names if len(name) < 5]
+print(short_names)
+
+# IF test matched, use first keyword to perform an action on the passing data
+long_names = [name.upper() for name in names if len(name) > 5]
+print(long_names)
+
+```
+
+
+### Using List Comprehension in our 50 States code from Section 25
+
+- In particular refactor this section: 
+
+
+
+
+
 
 ---
 ### Note on git merge
