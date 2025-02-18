@@ -401,7 +401,61 @@ draw_spirograph(5)
 - `pip install colorgram.py`
 
 
+#### Modulo solution
 
+- In [18.Turtle-GUI/Hirst-Painting-Project/main.py](https://github.com/Web3Degenerate/python-automate-the-boring-stuff/blob/main/18.Turtle-GUI/Hirst-Painting-Project/solution.py) We needed a block of code to run when the dot count hit groups of 10, so 10, 20, 30, 40...70, 80, 90, 100. 
+- To triger this we used `if dot_count % 10 == 0:` where dot_count was incrementing from 1 to 100
+
+```py
+
+for dot_count in range(1, number_of_dots + 1): #range(1, 101) to get the last dot (100th dot)
+    tim.dot(20, random.choice(color_list))
+    tim.forward(50)
+
+    '''Reset typewriter at end of each 'row', which is blocks of 10!! '''
+    if dot_count % 10 == 0: #means count is 10, 20, 30, 40, 50, 60, 70, 80, 90, 100
+        '''We need this block to repeat after every row (typewriter reset)'''
+        # Reset position outside of for loop which is just going across screen (left => right) 10 dots
+        tim.setheading(90) #face up
+        tim.forward(50) #move forward by 50 paces
+        tim.setheading(180) #turn left at end of line
+        tim.forward(500) # move 10 x 50 paces so 500 (go back to left like typewriter)
+        tim.setheading(0) #turn right
+
+```
+
+
+### Get a List of Tuples
+
+- In [18.Turtle-GUI/Hirst-Painting-Project/main.py](https://github.com/Web3Degenerate/python-automate-the-boring-stuff/blob/main/18.Turtle-GUI/Hirst-Painting-Project/solution.py)
+- Our desired data format: `#[(168, 99, 102), (168, 99, 102), (168, 99, 102), etc.]`
+- However data was coming out `[Rgb(r=245, g=243, b=238), Rgb(r=247, g=242, b=244), etc]`
+- Tuple solution below. 
+
+
+```py
+
+rgb_colors = []
+for color in colors: 
+    rgb_colors.append(color.rgb) #specify rgb or hsl etc. 
+
+# print(rgb_colors) returns [Rgb(r=245, g=243, b=238), Rgb(r=247, g=242, b=244), etc]
+
+# So modify like so: 
+'''Solution to get format we need, change how we tap into data in for loop'''
+formatted_rgb_colors = []
+for c in colors: 
+    r = c.rgb.r
+    g = c.rgb.g
+    b = c.rgb.b
+    '''CREATE OUR TUPLE WITH DESIRED (R, G, B) VALUES'''
+    new_color = (r, g, b)
+    formatted_rgb_colors.append(new_color)
+
+```
+
+
+x
 ---
 
 
