@@ -722,13 +722,26 @@ print(long_names)
 ```
 
 
-### Using List Comprehension in our 50 States code from Section 25
+### Using List Comprehension to refactor our 50 States code from Section 25
+
+- _See Sec26.V198_
 
 - In particular refactor this section: 
 
+```py
+#these four lines of code
+missing_states = []
+for state in all_states:
+    if state not in guessed_states:
+        missing_states.append(state)
+
+# become: 
+missing_states = [state for state in all_states if state not in guessed_states]
 
 
+```
 
+x
 
 
 ---
