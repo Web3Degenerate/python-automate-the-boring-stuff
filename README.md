@@ -394,7 +394,13 @@ draw_spirograph(5)
 
 ```
 
-x
+
+#### In Sec 18. V136 (Hirst) installed python package
+
+- Installed [colorgram.py](https://pypi.org/project/colorgram.py/)
+- `pip install colorgram.py`
+
+
 
 ---
 
