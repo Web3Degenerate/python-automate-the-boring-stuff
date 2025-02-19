@@ -403,7 +403,7 @@ draw_spirograph(5)
 
 #### Modulo solution
 
-- In [18.Turtle-GUI/Hirst-Painting-Project/main.py](https://github.com/Web3Degenerate/python-automate-the-boring-stuff/blob/main/18.Turtle-GUI/Hirst-Painting-Project/solution.py) We needed a block of code to run when the dot count hit groups of 10, so 10, 20, 30, 40...70, 80, 90, 100. 
+- In [18.Turtle-GUI/Hirst-Painting-Project/main.py](https://github.com/Web3Degenerate/python-automate-the-boring-stuff/blob/main/18.Turtle-GUI/Hirst-Painting-Project/main.py) We needed a block of code to run when the dot count hit groups of 10, so 10, 20, 30, 40...70, 80, 90, 100. 
 - To triger this we used `if dot_count % 10 == 0:` where dot_count was incrementing from 1 to 100
 
 ```py
@@ -427,7 +427,7 @@ for dot_count in range(1, number_of_dots + 1): #range(1, 101) to get the last do
 
 ### Get a List of Tuples
 
-- In [18.Turtle-GUI/Hirst-Painting-Project/main.py](https://github.com/Web3Degenerate/python-automate-the-boring-stuff/blob/main/18.Turtle-GUI/Hirst-Painting-Project/solution.py)
+- In [18.Turtle-GUI/Hirst-Painting-Project/main.py](https://github.com/Web3Degenerate/python-automate-the-boring-stuff/blob/main/18.Turtle-GUI/Hirst-Painting-Project/main.py)
 - Our desired data format: `#[(168, 99, 102), (168, 99, 102), (168, 99, 102), etc.]`
 - However data was coming out `[Rgb(r=245, g=243, b=238), Rgb(r=247, g=242, b=244), etc]`
 - Tuple solution below. 
