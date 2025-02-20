@@ -459,8 +459,37 @@ x
 ---
 
 
-19. 
+## 19. Higher Order Functions - Don't use fun ()
 
+
+- Calling one function from antoher
+
+```py
+
+# Calculator Function
+def function_a(n1, n2, func): 
+    return func(n1, n2)
+
+# Addition Function
+def function_b(n1, n2):
+    return n1 + n2
+
+# Subtraction Function
+def function_c(n1, n2): 
+    return n1 - n2
+
+
+'''Function A is the higher order function b/c it takes other functions'''
+#Pass functions b and c to a
+function_a(function_b)
+function_a(function_c)
+
+```
+
+### Turtle can add JavaScript like event listeners
+
+- Sec 19. V. 140. See Turtle Docs
+- See docs on [.onkey()](https://docs.python.org/3/library/turtle.html#turtle.onkey) and [.listen()](https://docs.python.org/3/library/turtle.html#turtle.listen)
 
 
 ---
