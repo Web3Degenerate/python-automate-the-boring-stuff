@@ -830,6 +830,87 @@ missing_states = [state for state in all_states if state not in guessed_states]
 
 ```
 
+### Dictionary Comphrension
+
+#### From a List
+- _Dictionary Comprehension_ FROM a LIST
+
+
+```py
+#Names List
+names = ['Alex', 'Beth', 'Caroline', 'Dave', 'Eleanor', 'Freddie']
+
+# FORMAT: 
+# student_scores = {new_key:new_value for student in LIST}
+student_scores = {student:random.randint(1, 100) for student in names}
+print(student_scores)
+
+
+```
+
+#### From another Dictionary - use DICTIONARY.items() 
+- _Dictionary Comprehension_ FROM a **another** Dictionary
+
+```py
+#using student_scores dictionary from above
+
+# passed_students = {new_key:new_value for (key, value) in DICTIONARY.items()}
+# passed_students = {new_key:new_value for (key, value) in DICTIONARY.items() if test}
+passed_students = {student:score for (student, score) in student_scores.items() if score > 50}
+
+print(passed_students)
+
+```
+
+
+### Iterate Over Pandas DataFrame
+
+- Iterating over Pandas DataFrame PRETTY MUCH the same as Python Dict
+
+```py
+student_dict = {
+    "student": ["Angela", "James", "Lily"],
+    "score": [56, 76, 98]
+}
+
+import pandas
+
+# Create new DataFrame from our student_dict
+student_data_frame = pandas.DataFrame(student_dict)
+
+#Loop through a data frame the ole fashion way = MESSY
+# loops through names of columns and then data, 
+for (key, value) in student_data_frame.items(): 
+    print(value) 
+
+```
+
+#### Pandas DataFrame IN BUILT LOOP WITH == .iterrows() instead of .items() 
+- _See Sec 26. V.200_
+- Each row is a Pandas Series Object, so we can access info with dot notation
+- - such as search row for value `if row.student == "Angela": `
+
+
+```py
+
+                               '''    .iterrows() instead of .items()  '''
+for (index, row) in student_data_frame.iterrows(): 
+    print(index) #prints DataFrame, then each index number
+    
+    print(row) #prints out each row, bit sloppy tho
+
+    '''Each row is a Pandas Series Object, so we can access info with dot notation'''
+    print(row.student) #prints out DataFrame, then each student value (Angela, James Lilly)
+
+    print(row.score) #same for the score values
+
+    '''Use Conditional logic to only print Angela's Score'''
+    if row.student == "Angela": 
+        print(row.score)
+
+```
+
+
 x
 
 
