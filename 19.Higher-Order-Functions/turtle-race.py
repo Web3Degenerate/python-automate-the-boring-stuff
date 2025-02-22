@@ -37,6 +37,8 @@ colors = ["red", "#FFA500", "yellow", "green", "blue", "purple"]
 # turtle_module.colormode(255)
 # tim = turtle_module.Turtle()
 
+is_race_on = False
+all_turtles = [] #Resume (2:36) Sec 19 V144
 
 starting_line_position = [-70, -40, -10, 20, 50, 80]
 for turtle_index in range(0, 6):
@@ -48,8 +50,16 @@ for turtle_index in range(0, 6):
     # n=-1
     # tim.goto(x=-230, y=starting_line_position.pop(n+1))
     # print(f"value of n is now {n}")
-
     print(f"This is numerical value of {turtle_index}.")
+
+# won't start until user input (which color) is received
+if user_bet: 
+    is_race_on = True
+
+
+while is_race_on: 
+    rand_distance = random.randint(0, 10)
+    turtle.forward(rand_distance)
 
 
 # ============================
