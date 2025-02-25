@@ -12,9 +12,18 @@ window.minsize(width=500, height=300)
 my_label = tkinter.Label(text="This is the label", font=("Arial", 24, "bold"))
 #print to screen with .pack()
 # https://docs.python.org/3/library/tkinter.html#the-packer
-my_label.pack()
+my_label.pack() #default "top" center
+# my_label.pack(side="left")
+# my_label.pack(side="right")
+my_label.pack(side="bottom", expand=True) #expand take up all space it can
 
 
+
+#===================================================
+# ==== **kw - kwargs Optional Arguemnts ================
+# ==============================================
+
+# Resume Sec 27 - V.206 - Setting Default Values for Optional Arguments
 
 
 
