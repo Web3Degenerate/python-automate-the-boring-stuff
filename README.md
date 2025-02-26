@@ -915,6 +915,56 @@ x
 
 
 ---
+
+
+# 27. tkinter, *args, **kwargs, Creating GUI
+
+
+
+- Sec 27.V206 - Keyword Arguments
+- Order doesn't matter
+
+```python
+def my_function(a, b, c): 
+    #do this with a
+    #that with b
+    #finally this with c
+
+my_function(C=3, a=1, b=2)
+
+```
+
+### Arguments with Default Values
+- Specify the default values in the function 
+
+```python
+def my_function(a=1, b=2, c=3): 
+    #do this with a
+    #that with b
+    #finally this with c
+
+# my_function(C=3, a=1, b=2)
+# call w/o params
+my_function()
+
+# To customize a value, specify in pararms
+my_function(b=5)
+
+'''Example using the Turtle library with font param in .write() function'''
+import turtle
+
+tim = turtle.Turtle()
+tim.write("Some Text", font=("Times New Roman", 80, "bold"))
+
+```
+
+
+### Unlimited Arguments
+
+- Sec 27. V.207.
+
+
+---
 ### Note on git merge
 
 - _Fell behind current state and tried to push up changes. (2/8/25)_
