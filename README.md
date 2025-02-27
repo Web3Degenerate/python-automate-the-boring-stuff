@@ -963,6 +963,20 @@ tim.write("Some Text", font=("Times New Roman", 80, "bold"))
 
 - Sec 27. V.207.
 
+- `*args` stands for arguments
+- The asterisks is the key. 
+- - could call it whatever you want, but stick with convention
+- - Must include * tho. 
+- format: 
+
+```py
+
+def add(*args):
+    for n in args:
+        print(n)
+
+```
+
 
 ---
 ### Note on git merge
