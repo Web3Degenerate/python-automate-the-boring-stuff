@@ -42,13 +42,14 @@ all_turtles = [] #Resume (2:36) Sec 19 V144
 
 starting_line_position = [-70, -40, -10, 20, 50, 80]
 for turtle_index in range(0, 6):
-    tim = Turtle(shape="turtle")
-    tim.penup()
-    tim.color(colors[turtle_index])
-    tim.goto(x=-230, y=starting_line_position[turtle_index])
+    new_turtle = Turtle(shape="turtle")
+    new_turtle.penup()
+    new_turtle.color(colors[turtle_index])
+    new_turtle.goto(x=-230, y=starting_line_position[turtle_index])
+    all_turtles.append(new_turtle)
 
     # n=-1
-    # tim.goto(x=-230, y=starting_line_position.pop(n+1))
+    # new_turtle.goto(x=-230, y=starting_line_position.pop(n+1))
     # print(f"value of n is now {n}")
     print(f"This is numerical value of {turtle_index}.")
 
@@ -58,8 +59,19 @@ if user_bet:
 
 
 while is_race_on: 
-    rand_distance = random.randint(0, 10)
-    turtle.forward(rand_distance)
+    # Add for loop to handle each of our six turtles
+    for turtle in all_turtles:
+        #Get the winning turtle by catching the first one to reach x-coordinate of 230 (250 max - 20 turtle size)
+        if turtle.xcor() > 230:
+            is_race_on = False #end the race
+            # print(turtle.color()) #mltiple ('yellow', 'yellow') returns pencolor and fillcolor
+            winning_color = turtle.pencolor()
+            if winning_color == user_bet:
+                print(f"You've won! {winning_color} turtle wins. Collect your winnings!")
+            else:
+                print(f"You Lost! {winning_color} turtle wins. The house wins again!")
+        rand_distance = random.randint(0, 10) #randit is inclusive
+        turtle.forward(rand_distance)
 
 
 # ============================
