@@ -959,23 +959,83 @@ tim.write("Some Text", font=("Times New Roman", 80, "bold"))
 ```
 
 
-### Unlimited Arguments
+### Unlimited Arguments with single askterisk `*` (_args_)
 
 - Sec 27. V.207.
 
 - `*args` stands for arguments
 - The asterisks is the key. 
+- - Single asterisk returns a tuple with the values passed in
 - - could call it whatever you want, but stick with convention
 - - Must include * tho. 
 - format: 
 
 ```py
-
+# *args creates a tuple of your input, so here (3, 5, 6)
 def add(*args):
     for n in args:
         print(n)
 
 ```
+
+### Unlimited Keyword Arguments with double askterisks `**` (_kwargs_)
+
+- Sec 27. V.208.
+
+- `**kwargs` stands for key word arguments
+- The double asterisks is the key. 
+- - Double asterisk returns a dictionary of key, value pairs
+- format: 
+
+
+```py
+
+# Double askteriks ** "kwargs" (keyword arguments)
+# pass in n, the normal positional argument
+def kwargs_calculate(n, **kwargs):
+    #loop through dictionary standard method
+    for key, value in kwargs.items():
+        print(key)
+        print(value)
+    # or just pull the value we want, here the 3 value to key 'add'
+    print(kwargs["add"]) #returns 3
+    # add and multiply to the value of n
+    n += kwargs['add']
+    n *= kwargs['multiply']
+    print(n) #2+3 = 5, 5*5 = 25
+
+
+kwargs_calculate(2, add=3, multiply=5) #returns dictionary {'add': 3, 'multiply': 5}
+
+```
+
+#### Use .get() to make **kwargs optional:  
+
+```py
+
+class Car: 
+
+    def __init__(self, **kw):
+        # this would REQUIRE value for make / model
+        self.make = kw["make"]
+        self.model = kw["model"]
+
+        '''Use .get() to make make/model optional'''
+        self.make = kw.get("make")
+        self.model = kw.get("model")      
+
+your_car = Car(make="Nissan", model="GT-8")
+print(your_car.make)
+print(your_car.model)
+
+my_car = Car(make="kia")
+print(my_car.make)
+print(my_car.model) #returns 'none' instead of an error
+
+```
+
+
+- x
 
 
 ---
