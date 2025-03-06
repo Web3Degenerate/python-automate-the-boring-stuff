@@ -1,3 +1,5 @@
+'''REVIEW IN Section 27. V.210'''
+
 from tkinter import *
 
 #Creating a new window and configurations
