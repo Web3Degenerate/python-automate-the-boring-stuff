@@ -1038,6 +1038,10 @@ print(my_car.model) #returns 'none' instead of an error
 - x
 
 
+- Using tkinter Button, Label and Entry Classes: 
+
+-- x
+
 ---
 ### Note on git merge
 
