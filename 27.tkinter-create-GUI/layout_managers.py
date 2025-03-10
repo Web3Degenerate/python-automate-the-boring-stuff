@@ -1,4 +1,4 @@
-# Resume Sec 27. V211
+# Resume Sec 27. V211.
 
 # tkinter comes with python
 # to import all classes use `import tkinter *`
@@ -14,7 +14,7 @@ def button_clicked():
 
 # window = tkinter.Tk()
 window = Tk()
-window.title("Our First GUI")
+window.title("My First GUI")
 window.minsize(width=500, height=300)
 
 
@@ -23,10 +23,17 @@ window.minsize(width=500, height=300)
 my_label = Label(text="This is the label", font=("Arial", 24, "bold"))
 #print to screen with .pack()
 # https://docs.python.org/3/library/tkinter.html#the-packer
-my_label.pack() #default "top" center
+# my_label.pack() #default "top" center
 # my_label.pack(side="left")
 # my_label.pack(side="right")
-my_label.pack(side="bottom", expand=True) #expand take up all space it can
+# my_label.pack(side="bottom", expand=True) #expand take up all space it can
+my_label.config(text="New Text")
+
+'''The .pack() method is very rigid. To get more precision, use: '''
+'''.place(x=0, y=0)'''
+# my_label.pack(side="left")
+my_label.place(x=0, y=0) #top left corner
+
 
 
 #using tkinter, we can set text with either way: 
@@ -48,7 +55,7 @@ my_label.pack(side="bottom", expand=True) #expand take up all space it can
 
 # button = tkinter.Button(text="Click Me", command=button_clicked)
 button = Button(text="Click Me", command=button_clicked)
-button.pack()
+button.pack(side="left")
 
 
 
@@ -67,8 +74,8 @@ button.pack()
 
 # input = tkinter.Entry(width=10)
 input = Entry(width=10)
-input.pack()
-input.get() #so I can optionally tap into kwargs I want without throwing error on skipped ones
+# input.get() #so I can optionally tap into kwargs I want without throwing error on skipped ones
+input.pack(side="left")
 
 
 
