@@ -32,7 +32,11 @@ my_label.config(text="New Text")
 '''The .pack() method is very rigid. To get more precision, use: '''
 '''.place(x=0, y=0)'''
 # my_label.pack(side="left")
-my_label.place(x=0, y=0) #top left corner
+# my_label.place(x=0, y=0) #top left corner
+
+'''Happy medium, .grid() give column (y) and row (x)'''
+''' grid tricky, order that you place items on grid matters '''
+my_label.grid(column=0, row=0)
 
 
 
@@ -55,8 +59,8 @@ my_label.place(x=0, y=0) #top left corner
 
 # button = tkinter.Button(text="Click Me", command=button_clicked)
 button = Button(text="Click Me", command=button_clicked)
-button.pack(side="left")
-
+# button.pack(side="left")
+button.grid(column=1, row=1)
 
 
 
@@ -75,7 +79,8 @@ button.pack(side="left")
 # input = tkinter.Entry(width=10)
 input = Entry(width=10)
 # input.get() #so I can optionally tap into kwargs I want without throwing error on skipped ones
-input.pack(side="left")
+# input.pack(side="left")
+input.grid(column=2, row=2)
 
 
 
