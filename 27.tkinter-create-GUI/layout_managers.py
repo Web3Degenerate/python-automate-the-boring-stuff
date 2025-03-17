@@ -16,8 +16,9 @@ def button_clicked():
 window = Tk()
 window.title("My First GUI")
 window.minsize(width=500, height=300)
-
-
+# Sec 27. V.211 - (11:00)
+'''Add global padding '''
+window.config(padx=20, pady=20)
 
 # my_label = tkinter.Label(text="This is the label", font=("Arial", 24, "bold"))
 my_label = Label(text="This is the label", font=("Arial", 24, "bold"))
@@ -37,7 +38,8 @@ my_label.config(text="New Text")
 '''Happy medium, .grid() give column (y) and row (x)'''
 ''' grid tricky, order that you place items on grid matters '''
 my_label.grid(column=0, row=0)
-
+# Sec 27. V.211 - (11:03) add padding around label
+my_label.config(padx=50, pady=50)
 
 
 #using tkinter, we can set text with either way: 
@@ -64,23 +66,33 @@ button.grid(column=1, row=1)
 
 
 
+
 #===================================================
 # ==== **kw - kwargs Optional Arguemnts ================
 # Reviewed in S.27. V.209. 
 # ==============================================
 
 
+
+# Sec 27. V.211 - add new button - after 7th min
+new_button = Button(text="New Button")
+new_button.grid(column=2, row=0)
+
 #===================================================
 # ==== Entry Class ================
 # Input Fields - used KWARGS with .get() in S.27.V.209
 # ==============================================
 
-
 # input = tkinter.Entry(width=10)
 input = Entry(width=10)
 # input.get() #so I can optionally tap into kwargs I want without throwing error on skipped ones
 # input.pack(side="left")
-input.grid(column=2, row=2)
+print(input.get())
+'''Can't use Grid and Pack in the same program: input.pack() with grid V211 at 6:19'''
+# input.pack() #throws error
+#input.grid(column=2, row=2) #grid more flexible, easier to understand
+# Move to column 3 to make room for new button
+input.grid(column=3, row=2) #grid more flexible, easier to understand
 
 
 
