@@ -1042,6 +1042,13 @@ print(my_car.model) #returns 'none' instead of an error
 
 -- x
 
+
+---
+
+# 31. Flash Card Project
+
+- Start in Section 31. V.234.
+
 ---
 ### Note on git merge
 
