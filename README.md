@@ -126,7 +126,7 @@ _See video 111 (section 16)_, introducing pypi.org packages.
 
 import the [PrettyTable](https://pypi.org/project/prettytable/) ascii table plugin
 
-with: `pip install PrettyTable` 
+with: `pip install PrettyTable`
 
 Get the [Coffee Machine OOP start code here](https://replit.com/@appbrewery/oop-coffee-machine-start)
 
@@ -147,7 +147,7 @@ money_machine.report()
 is_on = True
 menu = Menu()
 
-while is_on: 
+while is_on:
     options = menu.get_items()
     choice = input(f"What would you like? ({options}): ")
     if choice == "off":
@@ -155,7 +155,7 @@ while is_on:
     elif choice == "report":
         coffee_maker.report()
         money_machine.report()
-    else: 
+    else:
         #check that we have enough resources for the selected drink with find_drink(order_name) method
         drink = menu.find_drink(choice)
         print(drink)
@@ -163,7 +163,6 @@ while is_on:
 ```
 
 ---
-
 
 17. Quiz Class
 
@@ -180,20 +179,19 @@ user_1 = User()
 ```
 
 **Naming Conventions**
-Classes use `PascalCase`. Pretty much everything else is `snake_case`. 
+Classes use `PascalCase`. Pretty much everything else is `snake_case`.
 
 Python doesn't commonly use `camelCase`
 
-
 ### Class Constructors
-- Constructor - what happen when object is created, hence when it is initialized. 
-- use the init function, in python: 
+
+- Constructor - what happen when object is created, hence when it is initialized.
+- use the init function, in python:
 
 ```py
 def __init__(self):
 
 ```
-
 
 **In our User Example**
 
@@ -208,11 +206,11 @@ class User:
 
 ```
 
+### Method is a function attached to an object.
 
-### Method is a function attached to an object. 
-_like in a class_ 
+_like in a class_
 
-Our example of adding a method to simple User class and calling it on our first User object. 
+Our example of adding a method to simple User class and calling it on our first User object.
 
 ```py
 
@@ -260,10 +258,10 @@ print(f'Now, after method examples, {user_1.user_name} has {user_1.followers} fo
 
 ```
 
-
 ## Open tdb Trivia API [OpenTDB.com](https://opentdb.com/api_config.php)
+
 - Select question number, type, etc. and select **Generate API URL**
-- Get something like `https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=boolean` 
+- Get something like `https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=boolean`
 
 ---
 
@@ -271,9 +269,9 @@ print(f'Now, after method examples, {user_1.user_name} has {user_1.followers} fo
 
 _Turtle model uses_ [TKinter documentation](https://docs.python.org/3/library/tkinter.html)
 
+## for \_ in range(x) loop
 
-## for _ in range(x) loop
-Here, do something 4 times: 
+Here, do something 4 times:
 
 ```py
 for _ in range(4):
@@ -282,37 +280,35 @@ for _ in range(4):
 
 ```
 
-
 ### Importing Modules (S18.V130)
 
 **Basic Import**
+
 - **Keyword** + **Module name**
 - from turtle
 
 - Then you invoke a class with:
 
-- `timmy = turtle.Turtle()` 
-
+- `timmy = turtle.Turtle()`
 
 **Import with From**
 
 - **Keyword** + **Module name** + **keyword** + **Thing in Module**
 - from turtle import Turtle
 
-- Then you invoke an object with: 
+- Then you invoke an object with:
 
-- `timmy = Turtle()` 
-
+- `timmy = Turtle()`
 
 **Import All with From**
-- **Keyword** + **Module name** + **keyword** + **Thing in Module**
-- from turtle import *
 
+- **Keyword** + **Module name** + **keyword** + **Thing in Module**
+- from turtle import \*
 
 **Import Alias (makes more sense with longer module names)**
-- import turtle-asd_fgh_asdf_asd as t
-- `timmy = t.Turtle()` 
 
+- import turtle-asd_fgh_asdf_asd as t
+- `timmy = t.Turtle()`
 
 ### Installing Modules
 
@@ -320,21 +316,20 @@ for _ in range(4):
 - So install them with `pip` from [pypi.org](https://pypi.org)
 - Example: [**heroes 1.0.2**](https://pypi.org/project/heroes/)
 
-
-- installing a package, installs it in your local working python environment. 
-- This is on a per project basis. 
-- Get's stored in `.venv/lib/python3.X/` in pycharm or `.venv/lib/` in VS directory, your virtual environment. 
-
+- installing a package, installs it in your local working python environment.
+- This is on a per project basis.
+- Get's stored in `.venv/lib/python3.X/` in pycharm or `.venv/lib/` in VS directory, your virtual environment.
 
 **The need for Virtual Environments**
-- Python 3 is not backwards compatible with Python 2. 
+
+- Python 3 is not backwards compatible with Python 2.
 - Virtual environments create a small sandbox for our project
 - Avoids global conflicts over time
-
 
 **RESUME AT SEC 18, V.134 Python Tuples and Generate random RGB colors**
 
 S18.V.134 - **Python Tuples ()**
+
 - CAN NOT CHANGE values in a Tuple (No item assignment)
 
 ```py
@@ -350,14 +345,13 @@ my_list = [1, 3, 8]
 
 ```
 
-
 #### RGP challenge (rbg_example.py)
 
 - create random int from the random module (`random.randint(0, 255)`)
 - and use a custom function to generate a random color using the rgb values from 0 - 255
 
 ```py
-def random_color(): 
+def random_color():
     r = random.randint(0, 255)
     g = random.randint(0, 255)
     b = random.randint(0, 255)
@@ -369,23 +363,23 @@ def random_color():
 
 ```
 
+#### Spirograph - for \_ in (range)
 
-#### Spirograph - for _ in (range)
 - for in range can only take integers
 - division always returns float, even if whole number, ie 5.0
 
 ```py
 
-def draw_spirograph(size_of_gap):    
+def draw_spirograph(size_of_gap):
     '''(1) division always returns float, even if 10/2 = 5.0'''
     '''(2) range() only take int, so wrap division in int()'''
-    for _ in range(int(360 / size_of_gap)):    
+    for _ in range(int(360 / size_of_gap)):
         tim.color(random_color())
         tim.circle(100) #param is the radius size
             # print(tim.heading()) # returns 0.0
             # current_heading = tim.heading()
             # tim.setheading(current_heading + 10) #param takes angle
-        # REFACTOR to one line: 
+        # REFACTOR to one line:
         # tim.setheading(tim.heading() + 10)
         tim.setheading(tim.heading() + size_of_gap)
 
@@ -394,16 +388,14 @@ draw_spirograph(5)
 
 ```
 
-
 #### In Sec 18. V136 (Hirst) installed python package
 
 - Installed [colorgram.py](https://pypi.org/project/colorgram.py/)
 - `pip install colorgram.py`
 
-
 #### Modulo solution
 
-- In [18.Turtle-GUI/Hirst-Painting-Project/main.py](https://github.com/Web3Degenerate/python-automate-the-boring-stuff/blob/main/18.Turtle-GUI/Hirst-Painting-Project/main.py) We needed a block of code to run when the dot count hit groups of 10, so 10, 20, 30, 40...70, 80, 90, 100. 
+- In [18.Turtle-GUI/Hirst-Painting-Project/main.py](https://github.com/Web3Degenerate/python-automate-the-boring-stuff/blob/main/18.Turtle-GUI/Hirst-Painting-Project/main.py) We needed a block of code to run when the dot count hit groups of 10, so 10, 20, 30, 40...70, 80, 90, 100.
 - To triger this we used `if dot_count % 10 == 0:` where dot_count was incrementing from 1 to 100
 
 ```py
@@ -424,27 +416,25 @@ for dot_count in range(1, number_of_dots + 1): #range(1, 101) to get the last do
 
 ```
 
-
 ### Get a List of Tuples
 
 - In [18.Turtle-GUI/Hirst-Painting-Project/main.py](https://github.com/Web3Degenerate/python-automate-the-boring-stuff/blob/main/18.Turtle-GUI/Hirst-Painting-Project/main.py)
 - Our desired data format: `#[(168, 99, 102), (168, 99, 102), (168, 99, 102), etc.]`
 - However data was coming out `[Rgb(r=245, g=243, b=238), Rgb(r=247, g=242, b=244), etc]`
-- Tuple solution below. 
-
+- Tuple solution below.
 
 ```py
 
 rgb_colors = []
-for color in colors: 
-    rgb_colors.append(color.rgb) #specify rgb or hsl etc. 
+for color in colors:
+    rgb_colors.append(color.rgb) #specify rgb or hsl etc.
 
 # print(rgb_colors) returns [Rgb(r=245, g=243, b=238), Rgb(r=247, g=242, b=244), etc]
 
-# So modify like so: 
+# So modify like so:
 '''Solution to get format we need, change how we tap into data in for loop'''
 formatted_rgb_colors = []
-for c in colors: 
+for c in colors:
     r = c.rgb.r
     g = c.rgb.g
     b = c.rgb.b
@@ -454,20 +444,16 @@ for c in colors:
 
 ```
 
-
-x
----
-
+## x
 
 ## 19. Higher Order Functions - Don't use fun ()
-
 
 - Calling one function from antoher
 
 ```py
 
 # Calculator Function
-def function_a(n1, n2, func): 
+def function_a(n1, n2, func):
     return func(n1, n2)
 
 # Addition Function
@@ -475,7 +461,7 @@ def function_b(n1, n2):
     return n1 + n2
 
 # Subtraction Function
-def function_c(n1, n2): 
+def function_c(n1, n2):
     return n1 - n2
 
 
@@ -491,44 +477,32 @@ function_a(function_c)
 - Sec 19. V. 140. See Turtle Docs
 - See docs on [.onkey()](https://docs.python.org/3/library/turtle.html#turtle.onkey) and [.listen()](https://docs.python.org/3/library/turtle.html#turtle.listen)
 
+---
+
+20.
 
 ---
 
-20. 
-
-
----
-
-21. 
-
+21.
 
 ---
 
-
-22. 
-
+22.
 
 ---
 
-
-23. 
-
+23.
 
 ---
 
-
-24. 
-
+24.
 
 ---
 
+### 25. CSV Data and Pandas
 
-### 25. CSV Data and Pandas 
-
-
-- Download [the sample csv data from this link](https://docs.google.com/spreadsheets/d/1Rs1CKjiagTeXa53212JkjRSDu-tx77_YxEgGdkv5zRY/edit?gid=0#gid=0). 
-- Save as `weather_data.csv` 
-
+- Download [the sample csv data from this link](https://docs.google.com/spreadsheets/d/1Rs1CKjiagTeXa53212JkjRSDu-tx77_YxEgGdkv5zRY/edit?gid=0#gid=0).
+- Save as `weather_data.csv`
 
 ### Importing the CSV data
 
@@ -538,24 +512,24 @@ function_a(function_c)
 # use readlines() method to create a list named data from values in weather_data.csv
 # Use relative file path (same directory) to read weather_data.csv
 
-with open("weather_data.csv") as data_file: 
+with open("weather_data.csv") as data_file:
     """Use readlines() not just read() to get each line as item in our list"""
     data = data_file.readlines()
     print(data)
 
-    # Returns our list: 
-    #['day,temp,condition\n', 'Monday,12,Sunny\n', 'Tuesday,14,Rain\n', 
-    # 'Wednesday,15,Rain\n', 'Thursday,14,Cloudy\n', 'Friday,21,Sunny\n', 
+    # Returns our list:
+    #['day,temp,condition\n', 'Monday,12,Sunny\n', 'Tuesday,14,Rain\n',
+    # 'Wednesday,15,Rain\n', 'Thursday,14,Cloudy\n', 'Friday,21,Sunny\n',
     # 'Saturday,22,Sunny\n', 'Sunday,24,Sunny']
 
 ```
 
-2. Second option is to use the built in `csv` module: 
+2. Second option is to use the built in `csv` module:
 
 ```py
 import csv
 
-with open("weather_data.csv") as data_file: 
+with open("weather_data.csv") as data_file:
     data = csv.reader(data_file)
     print(data)
     # This creates a CSV READER Object
@@ -566,34 +540,33 @@ with open("weather_data.csv") as data_file:
     # The temperatures is in ROW index 1
     temperatures = [] #empty temperatures list
     for row in data:
-        if row[1] != "temp": #exclude the headers 
+        if row[1] != "temp": #exclude the headers
             #Add each temperatures aka row index 1 to our list and convert to int
             temperatures.append(int(row[1]))
     print(temperatures)
-    
+
     #returns [12, 14, 15, 14, 21, 22, 24]
 
 ```
 
-
 ## Pandas Python Data Analysis Library Visit [Pandas.pydata.org](https://pandas.pydata.org/docs/getting_started/index.html)
 
-- Helpful in particular with tabular data like our csv example. 
+- Helpful in particular with tabular data like our csv example.
 
-- Pandas not built into python. Have to install it. 
+- Pandas not built into python. Have to install it.
 
 ### Installing Pandas
+
 - You can install pandas from [PyPi.org at this link here](https://pypi.org/project/pandas/).
 
-- Run command `pip install pandas` 
-
+- Run command `pip install pandas`
 
 #### Panda Data Structures
 
 **two primary data structures in pandas**
+
 - 1 - Series (1-dimensional) - **like single column of csv**
 - 2 - DataFrame (2-dimensional) = **like our csv table data**
-
 
 ```py
 import pandas
@@ -609,10 +582,10 @@ print(type(data["temp"])) # returns Panda Series <class `pandas.core.series.Seri
 
 - See [**Pandas API Reference Here**](https://pandas.pydata.org/docs/reference/series.html)
 
-
 ### Pandas Built in Methods
 
 **Average with .mean()**
+
 - Example with Average. (No average method in python)
 
 ```py
@@ -643,12 +616,11 @@ print(f"The size of this list series is {len(temp_list)}")
 ### Pandas calling csv headers (CASE SENSITIVE!)
 
 **TWO was to call csv headers**
+
 - 1. `data["temp"]`
 - 2. `data.temp`
 
-
-### Pandas- Create Custom DataFrame and save to csv with .to_csv(<path><name>) 
-
+### Pandas- Create Custom DataFrame and save to csv with .to_csv(<path><name>)
 
 ```py
 
@@ -671,15 +643,13 @@ new_df.to_csv("new_df.csv")
 
 ```
 
-
 ## Squirrel Data Project
 
 - Download the squirrel csv file from [data.cityofnewyork.us](https://data.cityofnewyork.us/Environment/2018-Central-Park-Squirrel-Census-Squirrel-Data/vfnx-vebw/about_data)
 
+- Save CSV file as `squirrel_count_raw.csv` in project folder.
 
-- Save CSV file as `squirrel_count_raw.csv` in project folder. 
-
-- Import pandas and pull in the raw data with 
+- Import pandas and pull in the raw data with
 
 ```py
 import pandas
@@ -687,11 +657,10 @@ data = pandas.read_csv("squirrel_count_raw.csv")
 
 ```
 
-
 ### Turn a column in our csv data into a list with pandas .to_list()
 
 - call the `to_list()` function on our column
-- This allows us to use things like `for .. in  x` 
+- This allows us to use things like `for .. in  x`
 
 ```py
 
@@ -700,7 +669,7 @@ data = pandas.read_csv("50_states.csv")
 all_states = data.state.to_list()
 
 '''USE of if .. in is available ONLY because it has been converted into a LIST'''
-if answer_state in all_states: 
+if answer_state in all_states:
 
     t = turtle.Turtle()
     t.hideturtle() # hide it
@@ -714,8 +683,7 @@ if answer_state in all_states:
 
 #### Pandas .item() [_see pandas.Series.item docs here_](https://pandas.pydata.org/docs/reference/api/pandas.Series.item.html)
 
-- we used .item() to get a single text value from our csv table as shown below: 
-
+- we used .item() to get a single text value from our csv table as shown below:
 
 ```py
 
@@ -724,12 +692,12 @@ t.write(state_data.state.item())
 
 ```
 
-#### Break statement in our while loop with `for in` and `for not in` 
+#### Break statement in our while loop with `for in` and `for not in`
 
 - Create a list of states not answered correctly
 - Break out of the while loop when user input = `Exit`
-- use `.title()` output for force any input to first letter upper case 
--- such as `DeLaWarE` to be `Delaware`
+- use `.title()` output for force any input to first letter upper case
+  -- such as `DeLaWarE` to be `Delaware`
 - Finally, convert our new list of missed states to a DataFrame
 - Export this missing states list to a csv file in the same directory
 
@@ -752,14 +720,14 @@ t.write(state_data.state.item())
 
 ## 26. List Comprehension
 
-
 #### Python Sequences
+
 - list
 - range
 - string
 - tuple
 
-### List Comprehension format: 
+### List Comprehension format:
 
 ```py
 # Creating new list (Old way)
@@ -786,7 +754,6 @@ print(new_range) #returns 2, 4, 6, 8
 
 ```
 
-
 #### Conditional List Comprehension
 
 ```py
@@ -810,12 +777,11 @@ print(long_names)
 
 ```
 
-
 ### Using List Comprehension to refactor our 50 States code from Section 25
 
 - _See Sec26.V198_
 
-- In particular refactor this section: 
+- In particular refactor this section:
 
 ```py
 #these four lines of code
@@ -824,7 +790,7 @@ for state in all_states:
     if state not in guessed_states:
         missing_states.append(state)
 
-# become: 
+# become:
 missing_states = [state for state in all_states if state not in guessed_states]
 
 
@@ -833,14 +799,14 @@ missing_states = [state for state in all_states if state not in guessed_states]
 ### Dictionary Comphrension
 
 #### From a List
-- _Dictionary Comprehension_ FROM a LIST
 
+- _Dictionary Comprehension_ FROM a LIST
 
 ```py
 #Names List
 names = ['Alex', 'Beth', 'Caroline', 'Dave', 'Eleanor', 'Freddie']
 
-# FORMAT: 
+# FORMAT:
 # student_scores = {new_key:new_value for student in LIST}
 student_scores = {student:random.randint(1, 100) for student in names}
 print(student_scores)
@@ -848,7 +814,8 @@ print(student_scores)
 
 ```
 
-#### From another Dictionary - use DICTIONARY.items() 
+#### From another Dictionary - use DICTIONARY.items()
+
 - _Dictionary Comprehension_ FROM a **another** Dictionary
 
 ```py
@@ -861,7 +828,6 @@ passed_students = {student:score for (student, score) in student_scores.items() 
 print(passed_students)
 
 ```
-
 
 ### Iterate Over Pandas DataFrame
 
@@ -879,24 +845,24 @@ import pandas
 student_data_frame = pandas.DataFrame(student_dict)
 
 #Loop through a data frame the ole fashion way = MESSY
-# loops through names of columns and then data, 
-for (key, value) in student_data_frame.items(): 
-    print(value) 
+# loops through names of columns and then data,
+for (key, value) in student_data_frame.items():
+    print(value)
 
 ```
 
-#### Pandas DataFrame IN BUILT LOOP WITH == .iterrows() instead of .items() 
+#### Pandas DataFrame IN BUILT LOOP WITH == .iterrows() instead of .items()
+
 - _See Sec 26. V.200_
 - Each row is a Pandas Series Object, so we can access info with dot notation
 - - such as search row for value `if row.student == "Angela": `
 
-
 ```py
 
                                '''    .iterrows() instead of .items()  '''
-for (index, row) in student_data_frame.iterrows(): 
+for (index, row) in student_data_frame.iterrows():
     print(index) #prints DataFrame, then each index number
-    
+
     print(row) #prints out each row, bit sloppy tho
 
     '''Each row is a Pandas Series Object, so we can access info with dot notation'''
@@ -905,27 +871,22 @@ for (index, row) in student_data_frame.iterrows():
     print(row.score) #same for the score values
 
     '''Use Conditional logic to only print Angela's Score'''
-    if row.student == "Angela": 
+    if row.student == "Angela":
         print(row.score)
 
 ```
 
-
 x
-
 
 ---
 
-
-# 27. tkinter, *args, **kwargs, Creating GUI
-
-
+# 27. tkinter, \*args, \*\*kwargs, Creating GUI
 
 - Sec 27.V206 - Keyword Arguments
 - Order doesn't matter
 
 ```python
-def my_function(a, b, c): 
+def my_function(a, b, c):
     #do this with a
     #that with b
     #finally this with c
@@ -935,10 +896,11 @@ my_function(C=3, a=1, b=2)
 ```
 
 ### Arguments with Default Values
-- Specify the default values in the function 
+
+- Specify the default values in the function
 
 ```python
-def my_function(a=1, b=2, c=3): 
+def my_function(a=1, b=2, c=3):
     #do this with a
     #that with b
     #finally this with c
@@ -958,17 +920,16 @@ tim.write("Some Text", font=("Times New Roman", 80, "bold"))
 
 ```
 
-
 ### Unlimited Arguments with single askterisk `*` (_args_)
 
 - Sec 27. V.207.
 
 - `*args` stands for arguments
-- The asterisks is the key. 
+- The asterisks is the key.
 - - Single asterisk returns a tuple with the values passed in
 - - could call it whatever you want, but stick with convention
-- - Must include * tho. 
-- format: 
+- - Must include \* tho.
+- format:
 
 ```py
 # *args creates a tuple of your input, so here (3, 5, 6)
@@ -983,10 +944,9 @@ def add(*args):
 - Sec 27. V.208.
 
 - `**kwargs` stands for key word arguments
-- The double asterisks is the key. 
+- The double asterisks is the key.
 - - Double asterisk returns a dictionary of key, value pairs
-- format: 
-
+- format:
 
 ```py
 
@@ -1009,11 +969,11 @@ kwargs_calculate(2, add=3, multiply=5) #returns dictionary {'add': 3, 'multiply'
 
 ```
 
-#### Use .get() to make **kwargs optional:  
+#### Use .get() to make \*\*kwargs optional:
 
 ```py
 
-class Car: 
+class Car:
 
     def __init__(self, **kw):
         # this would REQUIRE value for make / model
@@ -1022,7 +982,7 @@ class Car:
 
         '''Use .get() to make make/model optional'''
         self.make = kw.get("make")
-        self.model = kw.get("model")      
+        self.model = kw.get("model")
 
 your_car = Car(make="Nissan", model="GT-8")
 print(your_car.make)
@@ -1034,14 +994,11 @@ print(my_car.model) #returns 'none' instead of an error
 
 ```
 
-
 - x
 
-
-- Using tkinter Button, Label and Entry Classes: 
+- Using tkinter Button, Label and Entry Classes:
 
 -- x
-
 
 ---
 
@@ -1049,7 +1006,14 @@ print(my_car.model) #returns 'none' instead of an error
 
 - Start in Section 31. V.234.
 
+## Pandas DataFrame.to_dict parameters
+
+<img src="https://i.imgur.com/5t03nSQ.png" alt="Pandas" width="100">
+
+![Pandas DataFrame.to_dict paramters](https://i.imgur.com/5t03nSQ.png)
+
 ---
+
 ### Note on git merge
 
 - _Fell behind current state and tried to push up changes. (2/8/25)_
@@ -1057,5 +1021,5 @@ print(my_car.model) #returns 'none' instead of an error
 
 1. `git fetch`
 2. `git reset --hard HEAD`
-3. `git merge origin` 
-    - this returned error message, and then followed conflict manager in VS code
+3. `git merge origin`
+   - this returned error message, and then followed conflict manager in VS code
