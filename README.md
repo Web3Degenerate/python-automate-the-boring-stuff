@@ -1012,6 +1012,44 @@ print(my_car.model) #returns 'none' instead of an error
 
 ![Pandas DataFrame.to_dict paramters](https://i.imgur.com/5t03nSQ.png)
 
+
+
+
+- Sec 31. Vid 242. around (4:30) see **Try, Except and Else** block:
+
+```py
+'''READ from our updated CSV list of remaining words to learn (Sec 31 V242 (4:30))'''
+to_learn = {}
+try:
+  data = pandas.read_csv("data/words_to_learn.csv")
+except FileNotFoundError:
+  # data = pandas.read_csv("data/french_words.csv") #dataframe
+  original_data = pandas.read_csv("data/french_words.csv") 
+  to_learn = original_data.to_dict(orient="records")
+else:
+  to_learn = data.to_dict(orient="records")
+
+```
+
+### index=False param to avoid increasing index columns on each .to_csv() save
+
+```py
+
+#Add is_known new function is_known in Sec 31 Video 242 (00:55)
+def is_known():
+  to_learn.remove(current_card) #remove current card from to_learn dictionary
+  print(len(to_learn))
+  '''Use Pandas to create a NEW dataframe to store remaining words to learn (Sec 31 V242 (3:10))'''
+  data = pandas.DataFrame(to_learn)
+  # data.to_csv("data/words_to_learn.csv") #overwrites the csv file every time to_learn dictionary is udpated
+  '''Sec 31, Vid 242 (8:05) set index to False to avoid increasing index columns on each save'''
+  data.to_csv("data/words_to_learn.csv", index=False)
+  
+  next_card()
+
+```
+
+
 ---
 
 ### Note on git merge

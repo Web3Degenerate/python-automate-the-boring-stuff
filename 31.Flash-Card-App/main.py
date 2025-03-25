@@ -4,8 +4,18 @@ import random
 
 BACKGROUND_COLOR = "#B1DDC6"
 
-data = pandas.read_csv("data/french_words.csv") #dataframe
-to_learn = data.to_dict(orient="records") # records list like [{column -> value},...,{column->value}]
+'''READ from our updated CSV list of remaining words to learn (Sec 31 V242 (4:30))'''
+to_learn = {}
+try:
+  data = pandas.read_csv("data/words_to_learn.csv")
+except FileNotFoundError:
+  # data = pandas.read_csv("data/french_words.csv") #dataframe
+  original_data = pandas.read_csv("data/french_words.csv") 
+  to_learn = original_data.to_dict(orient="records")
+else:
+  to_learn = data.to_dict(orient="records")
+
+# to_learn = data.to_dict(orient="records") # records list like [{column -> value},...,{column->value}]
 # print(to_learn)
 
 ## Sec 31, Vid 240 - (2:15) - set current_card empty dictionary to pass from next_card() to flip_card()
@@ -33,6 +43,18 @@ def flip_card(): ## Sec 31, Vid 240 - (1:15) - function to flip card after 3 sec
   # Sec 31, Vid 240 (4:00)
   canvas.itemconfig(card_background, image=card_back_img)
 
+
+#Add is_known new function is_known in Sec 31 Video 242 (00:55)
+def is_known():
+  to_learn.remove(current_card) #remove current card from to_learn dictionary
+  print(len(to_learn))
+  '''Use Pandas to create a NEW dataframe to store remaining words to learn (Sec 31 V242 (3:10))'''
+  data = pandas.DataFrame(to_learn)
+  # data.to_csv("data/words_to_learn.csv") #overwrites the csv file every time to_learn dictionary is udpated
+  '''Sec 31, Vid 242 (8:05) set index to False to avoid increasing index columns on each save'''
+  data.to_csv("data/words_to_learn.csv", index=False)
+  
+  next_card()
 
 window = Tk()
 window.title("Flashy")
@@ -73,7 +95,10 @@ unknown_button.grid(row=1, column=0)
 
 ## CORRECT Button
 check_image = PhotoImage(file="images/right.png")
-known_button = Button(image=check_image, highlightthickness=0, command=next_card)
+
+#Change known_button function to new function is_known in Sec 31 Video 242 (00:50)
+# known_button = Button(image=check_image, highlightthickness=0, command=next_card)
+known_button = Button(image=check_image, highlightthickness=0, command=is_known)
 #place right button on grid
 known_button.grid(row=1, column=1)
 
