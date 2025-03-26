@@ -7,8 +7,12 @@ import time
 # while game is running
 game_is_on = True
 while game_is_on:
+    screen.update()
     '''Using time module, add a 1 second delay (Sec 20. V.148 (6:40))'''
     time.sleep(0.1) #one-tenth second delay after all three segments have moved (faster)
+    
+    snake.move() # Don't forget to call the move function from our Snake class!
+
 
 ```
 
