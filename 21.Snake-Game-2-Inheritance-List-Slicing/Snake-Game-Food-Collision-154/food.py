@@ -18,7 +18,15 @@ class Food(Turtle):
         self.shapesize(stretch_len=0.5, stretch_wid=0.5) #creates 10 x 10 circle. Default is 20 x 20.
         self.color("blue")
         self.speed("fastest")
+        '''Replace this block of code with refresh()'''
+        self.refresh()
         #set random x and y coordinates with the random module
+        # random_x = random.randint(-280, 280)
+        # random_y = random.randint(-280, 280)
+        # self.goto(random_x, random_y) 
+
+    '''Create new refresh() method from food.py (Sec 21 V.154 at 9:55)'''
+    def refresh(self):
         random_x = random.randint(-280, 280)
         random_y = random.randint(-280, 280)
         self.goto(random_x, random_y) #go to a random x,y coordinate

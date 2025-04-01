@@ -39,8 +39,11 @@ while game_is_on:
 
     ''' Detect Snake - Food Collision in Sec 23. V. 154 (7:48)'''
     # use turtle.distance(x, y=None)
-
-
+    # check distance from snake head to food (10x10 pixels) is less than 15 pixels = collision
+    if snake.head.distance(food) < 15:
+        print("collision")
+        '''Pull in new refresh() method from food.py (Sec 21 V.154 at 9:55)'''
+        food.refresh()
 
 
 screen.exitonclick()
