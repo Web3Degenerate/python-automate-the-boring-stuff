@@ -7,6 +7,8 @@ class Scoreboard(Turtle): #inherits from Turtle
         super().__init__()
         #score starts at 0
         self.score = 0
+        self.color("white") # Set color and CSS and such before write to screen below
+
         # Use Turtle write method to display text on screen
         # self.write(f"Score: {self.score}", align="center", font="Arial:24, normal")
         '''Font has to be a Tuple, not just a string'''

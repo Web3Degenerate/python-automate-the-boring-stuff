@@ -8,6 +8,7 @@ import time
 from snake import Snake
 #Sec 21 - V154 - import Food class
 from food import Food
+from scoreboard import Scoreboard
 
 screen = Screen()
 screen.setup(width=600, height=600)
@@ -15,10 +16,14 @@ screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("Snake Game")
 
+screen.tracer(0) #not sure when added
 
 
 snake = Snake()
 food = Food()
+'''Sec 21. V.155 (4:30) Add Scoreboard'''
+scoreboard = Scoreboard()
+
 
 # Sec 20. V150 - Add screen.listen() to control snake with keyboard (arrow keys)
 '''Create the up, down, left and right functions in our Snake.py Class '''
