@@ -50,5 +50,11 @@ while game_is_on:
         '''Pull in new refresh() method from food.py (Sec 21 V.154 at 9:55)'''
         food.refresh()
 
+        # at 7:30 in Sec 21, V.155 import Scoreboard
+        scoreboard.increase_score()
+
 
 screen.exitonclick()
+
+
+# resume at Sec 21. V156.
