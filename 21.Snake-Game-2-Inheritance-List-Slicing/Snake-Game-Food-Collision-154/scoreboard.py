@@ -52,3 +52,9 @@ class Scoreboard(Turtle): #inherits from Turtle
         # self.write(f"Score: {self.score}", align="center", font=("Arial", 24, "normal"))
         self.update_scoreboard()
 
+    '''Add Wall Collision in Sec 21 V 156 at 240'''
+    def game_over(self):
+        # Have message go to center of screen
+        self.goto(0, 0)
+        self.write("GAME OVER", alight=ALIGNMENT, font=FONT)
+
