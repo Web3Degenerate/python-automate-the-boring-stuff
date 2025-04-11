@@ -56,5 +56,5 @@ class Scoreboard(Turtle): #inherits from Turtle
     def game_over(self):
         # Have message go to center of screen
         self.goto(0, 0)
-        self.write("GAME OVER", alight=ALIGNMENT, font=FONT)
+        self.write("GAME OVER", align=ALIGNMENT, font=FONT)
 

@@ -20,13 +20,31 @@ class Snake:
 
     def create_snake(self):
         for position in STARTING_POSITIONS:
-            new_segment = Turtle("square")
-            new_segment.color("white")
-            new_segment.penup()
-            new_segment.goto(position)
-            #segments.append(new_segment)
-            self.segments.append(new_segment)
+            '''Updated in Sec 21 V 157'''
+            self.add_segment(position)
+            # new_segment = Turtle("square")
+            # new_segment.color("white")
+            # new_segment.penup()
+            # new_segment.goto(position)
+            # #segments.append(new_segment)
+            # self.segments.append(new_segment)
     
+    '''Added add_segment and extend in Sec 21 V 157'''
+    def add_segment(self, position):
+        new_segment = Turtle("square")
+        new_segment.color("white")
+        new_segment.penup()
+        new_segment.goto(position)
+        #segments.append(new_segment)
+        self.segments.append(new_segment)
+
+
+    def extend(self):
+        #Add a new segment to the snake
+                        #get hold of last position with -1 ie [1, 2, 3]
+        self.add_segment(self.segments[-1].position())
+
+
     def move(self):
         ''' range comes from C Language (not pure python) Can't use keywords start, stop, step '''
         # for seg_num in range(start= 2, stop= 0, step= -1):
@@ -66,3 +84,4 @@ class Snake:
         # self.head.setheading(0) 
         if self.head.heading() != LEFT: 
             self.head.setheading(RIGHT) 
+

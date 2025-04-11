@@ -1,4 +1,4 @@
- #import food class
+  #import food class
 
 # from turtle import Screen, Turtle #importing Turtle in food.py and snake.py
 from turtle import Screen
@@ -46,12 +46,15 @@ while game_is_on:
     # use turtle.distance(x, y=None)
     # check distance from snake head to food (10x10 pixels) is less than 15 pixels = collision
     if snake.head.distance(food) < 15:
-        print("collision")
+        # print("collision")
         '''Pull in new refresh() method from food.py (Sec 21 V.154 at 9:55)'''
         food.refresh()
 
         # at 7:30 in Sec 21, V.155 import Scoreboard
         scoreboard.increase_score()
+
+        '''Added Snake extend in Sec 21 V 157'''
+        snake.extend()
 
     '''Add Wall Collision in Sec 21 V 156'''
     #Detect collision with wall
@@ -59,7 +62,28 @@ while game_is_on:
         #exit the while loop
         game_is_on = False
         scoreboard.game_over()
+
+    '''Sec 21 V 157 (3:35) Detect collision with Tail'''
+    # If the head collides with any segment in the tail - Trigger game_over
+
+    '''This would always catch the had since the had size is 10 pixels'''
+    # for segment in snake.segments:
+    #     if snake.head.distance(segment) < 10:
+    #         game_is_on = False
+    #         scoreboard.game_over()
+
+    for segment in snake.segments:
+        if segment == snake.head:
+            pass
+        elif snake.head.distance(segment) < 10:
+            game_is_on = False
+            scoreboard.game_over()
+
  
+# screen was instantly closing at end of game because misspelled 'align" in scoreboard game_over()
+# screen.update()
+# time.sleep(3)
+
 screen.exitonclick()
 
 
