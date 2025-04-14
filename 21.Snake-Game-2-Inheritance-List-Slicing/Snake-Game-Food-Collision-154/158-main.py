@@ -1,3 +1,5 @@
+# Sec 21 V 158 - Add Slicing
+
   #import food class
 
 # from turtle import Screen, Turtle #importing Turtle in food.py and snake.py
@@ -56,7 +58,8 @@ while game_is_on:
         '''Added Snake extend in Sec 21 V 157'''
         snake.extend()
 
-    '''Add Wall Collision in Sec 21 V 156'''
+
+    '''Add Detect Wall Collision in Sec 21 V 156'''
     #Detect collision with wall
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
         #exit the while loop
@@ -72,6 +75,8 @@ while game_is_on:
     #         game_is_on = False
     #         scoreboard.game_over()
 
+
+    '''Sec 21 V 158 at (1:34) use Slicing like piano_keys[2:5] '''
     for segment in snake.segments:
         if segment == snake.head:
             pass

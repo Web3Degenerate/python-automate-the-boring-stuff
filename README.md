@@ -483,7 +483,32 @@ function_a(function_c)
 
 ---
 
-21.
+### 21. Slicing (piano_keys[2:5])
+
+- See [Sec 21 V.158 on Slicing in Python](https://www.udemy.com/course/100-days-of-code/learn/lecture/20361177#overview)
+
+
+- In the Snake Game, we needed to skip the first section of the snake (head) and then process the rest of the snake body. 
+
+With slicing we could avoid using code like: 
+
+```py
+
+    for segment in snake.segments:
+        if segment == snake.head:
+            pass
+        elif snake.head.distance(segment) < 10:
+            game_is_on = False
+            scoreboard.game_over()
+
+```
+
+And instead use: 
+
+```py
+#piano_keys[2:5]
+
+```
 
 ---
 
