@@ -487,6 +487,38 @@ function_a(function_c)
 
 - See [Sec 21 V.158 on Slicing in Python](https://www.udemy.com/course/100-days-of-code/learn/lecture/20361177#overview)
 
+- Slice Range does not include the last position `[2:5]`
+- Slice to the end, omit the 2nd range number `[2:]`
+- Slice Third number, specify which objects to select in given range `[2:5:2]`
+
+```python
+
+piano_keys = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+
+'''Returns 2, 3 and 4, NOT include 5'''
+print(piano_keys[2:5])
+
+'''OMIT 2nd Range Number - Returns 2, to 8'''
+print(piano_keys[2:])
+
+'''OMIT 1st Range Number - Returns 0 to 4'''
+print(piano_keys[:5])
+
+'''Third Number Which Objects To Take - Here Every Other Obejct '''
+'''Returns 2, (skip 3) and 4'''
+print(piano_keys[2:5:2])
+
+'''Range = All, Selection = Every 2nd Item'''
+'''Here, this would return all the odd numbers 1, 3, 5, 7'''
+print(piano_keys[::2])
+
+
+'''You can also use third number to flip the list with -1 '''
+'''Here, this would return all the numbers flipped 8 to 0'''
+print(piano_keys[::-1])
+
+```
+
 
 - In the Snake Game, we needed to skip the first section of the snake (head) and then process the rest of the snake body. 
 
