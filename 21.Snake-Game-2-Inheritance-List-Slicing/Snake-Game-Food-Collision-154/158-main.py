@@ -77,12 +77,22 @@ while game_is_on:
 
 
     '''Sec 21 V 158 at (1:34) use Slicing like piano_keys[2:5] '''
-    for segment in snake.segments:
-        if segment == snake.head:
-            pass
-        elif snake.head.distance(segment) < 10:
+    '''Sec 21 V 158 at (6:00) use Slicing to rewrite this into one if statement'''
+    ''' snake.segments[1:] which excludes first 0 item (head) '''
+    for segment in snake.segments[1:]:
+        if snake.head.distance(segment) < 10:
             game_is_on = False
             scoreboard.game_over()
+
+    # for segment in snake.segments:
+    #     if segment == snake.head:
+    #         pass
+    #     elif snake.head.distance(segment) < 10:
+    #         game_is_on = False
+    #         scoreboard.game_over()
+
+
+
 
  
 # screen was instantly closing at end of game because misspelled 'align" in scoreboard game_over()

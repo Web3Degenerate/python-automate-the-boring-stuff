@@ -519,10 +519,9 @@ print(piano_keys[::-1])
 
 ```
 
+- In the Snake Game, we needed to skip the first section of the snake (head) and then process the rest of the snake body.
 
-- In the Snake Game, we needed to skip the first section of the snake (head) and then process the rest of the snake body. 
-
-With slicing we could avoid using code like: 
+With slicing we could avoid using code like:
 
 ```py
 
@@ -535,10 +534,15 @@ With slicing we could avoid using code like:
 
 ```
 
-And instead use: 
+And instead use:
 
 ```py
-#piano_keys[2:5]
+
+    ''' snake.segments[1:] which excludes first 0 item (head) '''
+    for segment in snake.segments[1:]:
+        if snake.head.distance(segment) < 10:
+            game_is_on = False
+            scoreboard.game_over()
 
 ```
 
@@ -1069,9 +1073,6 @@ print(my_car.model) #returns 'none' instead of an error
 
 ![Pandas DataFrame.to_dict paramters](https://i.imgur.com/5t03nSQ.png)
 
-
-
-
 - Sec 31. Vid 242. around (4:30) see **Try, Except and Else** block:
 
 ```py
@@ -1081,7 +1082,7 @@ try:
   data = pandas.read_csv("data/words_to_learn.csv")
 except FileNotFoundError:
   # data = pandas.read_csv("data/french_words.csv") #dataframe
-  original_data = pandas.read_csv("data/french_words.csv") 
+  original_data = pandas.read_csv("data/french_words.csv")
   to_learn = original_data.to_dict(orient="records")
 else:
   to_learn = data.to_dict(orient="records")
@@ -1101,11 +1102,10 @@ def is_known():
   # data.to_csv("data/words_to_learn.csv") #overwrites the csv file every time to_learn dictionary is udpated
   '''Sec 31, Vid 242 (8:05) set index to False to avoid increasing index columns on each save'''
   data.to_csv("data/words_to_learn.csv", index=False)
-  
+
   next_card()
 
 ```
-
 
 ---
 
