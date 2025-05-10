@@ -1,11 +1,8 @@
-'''This adds the paddle collision logic in Sec 22. V.166'''
-
-#163 focuses on creating the opponent's paddle (2nd paddle)
-
+'''This adds the ball out of bounds logic in Sec 22. V.167'''
 # Set up the Main Screen
 from turtle import Screen, Turtle
-from paddle import Paddle #import paddle.py
-from ball import Ball #import ball.py
+from paddle167 import Paddle #import paddle.py
+from ball167 import Ball #import ball.py
 import time
 
 screen = Screen()
@@ -68,6 +65,16 @@ while game_is_on:
         '''Forgot to add `ball.bounce_x()` and ball went right through r_paddle (5/8/2025)'''
         ball.bounce_x() 
 
+
+    '''167 - Detect if ball out of bounds (380/-380)'''
+    # Right paddle misses when ball beyond 380
+    if ball.xcor() > 380:
+        # pass
+        ball.reset_position()
+
+    # Left paddle misses whhen ball beyond -380
+    if ball.xcor() < -380:
+        ball.reset_position()
 
 #Make the screen persist
 screen.exitonclick()
