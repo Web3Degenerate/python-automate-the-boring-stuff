@@ -46,7 +46,12 @@ screen.onkey(l_paddle.go_down, "s")
 game_is_on = True
 while game_is_on:
     '''import time module to sleep between refreshes'''
-    time.sleep(0.1) # 0.1 second sleep
+    #time.sleep(0.1) # 0.1 second sleep
+
+    '''Speed up the ball over game play with time.sleep() at 6:28 in V168.'''
+    time.sleep(ball.move_speed) # set the increasing ball speed in our ball168.py file
+
+
     screen.update()
     '''Call ball.move() to move ball from center'''
     ball.move()
