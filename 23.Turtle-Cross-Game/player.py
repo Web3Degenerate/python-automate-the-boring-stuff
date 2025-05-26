@@ -16,3 +16,7 @@ class Player(Turtle): # player inherits from Turtle Class so player can do every
         self.penup() # so doesn't draw while moving
         self.goto(STARTING_POSITION) # globakl Tuple variable above
         self.setheading(90) # face north
+
+
+    def go_up(self):
+        self.forward(MOVE_DISTANCE)
