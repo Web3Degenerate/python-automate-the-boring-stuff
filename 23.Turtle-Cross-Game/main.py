@@ -30,3 +30,16 @@ while game_is_on:
     # Every refresh of the screen which happens every 0.1 seconds
     car_manager.create_car()
     car_manager.move_cars()
+
+
+    '''Detect collision with car in Sec 23. V. 177 (1:10)'''
+    for car in car_manager.all_cars:
+        if car.distance(player) < 20:
+            game_is_on = False
+
+
+
+
+
+'''Keep Screen up Until We Close it'''
+screen.exitonclick()
