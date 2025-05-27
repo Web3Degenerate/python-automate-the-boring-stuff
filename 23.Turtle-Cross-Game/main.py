@@ -12,6 +12,8 @@ screen.tracer(0) #turn off tracer
 '''Instantiate Player class from player.py'''
 player = Player()
 
+'''Instantiate CarManager class from car_manager.py'''
+car_manager = CarManager()
 
 '''Get Player to move up with arrow (Sec 23. V175, 2:55)'''
 screen.listen()
@@ -24,3 +26,7 @@ game_is_on = True
 while game_is_on:
     time.sleep(0.1)
     screen.update()
+
+    # Every refresh of the screen which happens every 0.1 seconds
+    car_manager.create_car()
+    car_manager.move_cars()

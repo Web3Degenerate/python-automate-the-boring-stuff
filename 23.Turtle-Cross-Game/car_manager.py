@@ -15,20 +15,28 @@ class CarManager:
         all_card = []
         # Didn't use super().__init__() here
 
-    def create_cars(self):
-        # Create random car somewhere along the y-axis
-        new_car = Turtle("square")
-                            # multipy width by 2, length by 1 (keep the same)
-        new_car.shapesize(stretch_wid=2, stretch_len=1) # set the size of the car with .shapesize()
-        new_car.penup() # don't draw
-        new_car.color(random.choice(COLORS)) #randomly pull color from global variable above
-        random_y = random.choice(-250, 250) # where goes - random y-axis position b/t -250 to 250
-        new_car.goto(300, random_y)
+    def create_car(self):
+        '''To slow down massive block of cars (every 0.1 seconds create new one), only run this function ROUGHLY 1 in 6 times, like roll of dice'''
+        random_chance = random.randint(1,6)
+        if random_chance == 1:
+            # Create random car somewhere along the y-axis
+            new_car = Turtle("square")
+                                # multipy length by 2, width by 1 (keep the same)
+            new_car.shapesize(stretch_wid=1, stretch_len=2) # set the size of the car with .shapesize()
+            new_car.penup() # don't draw
+            new_car.color(random.choice(COLORS)) #randomly pull color from global variable above
+            random_y = random.choice(-250, 250) # where goes - random y-axis position b/t -250 to 250
+            new_car.goto(300, random_y)
 
-        # Append to our list of all_cars[]
-        '''Requires self keyword to add to list in this case'''
-        self.all_cars.append(new_car)
-        
+            # Append to our list of all_cars[]
+            '''Requires self keyword to add to list in this case'''
+            self.all_cars.append(new_car)
+
+
+    def move_cars(self):
+        for car in self.all_cars:
+            car.backward(STARTING_MOVE_DISTANCE) # move backwards 5 pixels/paces
+
 
 
 
