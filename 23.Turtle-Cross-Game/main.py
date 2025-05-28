@@ -42,7 +42,11 @@ while game_is_on:
     # Defined as line 280 in player.py constant (FINISH_LINE_Y = 280)
     if player.is_at_finish_line(): 
         player.got_to_start() #reset turtle at starting position for next level
- 
+        '''Use new .level_up() function in car_manager.py'''
+        car_manager.level_up()
+
+
+
 
 '''Keep Screen up Until We Close it'''
 screen.exitonclick()

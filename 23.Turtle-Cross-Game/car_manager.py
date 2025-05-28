@@ -14,6 +14,8 @@ class CarManager:
     def __init__(self):
         all_card = []
         # Didn't use super().__init__() here
+        '''Sec 23. V178 (3:40) increase car speed every level'''
+        self.car_speed = STARTING_MOVE_DISTANCE #(initally set to constant of 10)
 
     def create_car(self):
         '''To slow down massive block of cars (every 0.1 seconds create new one), only run this function ROUGHLY 1 in 6 times, like roll of dice'''
@@ -35,10 +37,14 @@ class CarManager:
 
     def move_cars(self):
         for car in self.all_cars:
-            car.backward(STARTING_MOVE_DISTANCE) # move backwards 5 pixels/paces
+            '''Sec 23. V178 (3:50) Set car speed to variable set up in init'''
+            # car.backward(STARTING_MOVE_DISTANCE) # move backwards 5 pixels/paces
+            car.backward(self.car_speed)
 
 
-
+    '''Created Level up in Sec 23. V178 (3:30)'''
+    def level_up(self):
+        self.car_speed += MOVE_INCREMENT #increment speed by 5 each level
 
 
 
