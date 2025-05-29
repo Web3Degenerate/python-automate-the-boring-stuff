@@ -12,7 +12,7 @@ MOVE_INCREMENT = 10
 class CarManager:
     
     def __init__(self):
-        all_card = []
+        self.all_cars = []
         # Didn't use super().__init__() here
         '''Sec 23. V178 (3:40) increase car speed every level'''
         self.car_speed = STARTING_MOVE_DISTANCE #(initally set to constant of 10)
@@ -27,7 +27,8 @@ class CarManager:
             new_car.shapesize(stretch_wid=1, stretch_len=2) # set the size of the car with .shapesize()
             new_car.penup() # don't draw
             new_car.color(random.choice(COLORS)) #randomly pull color from global variable above
-            random_y = random.choice(-250, 250) # where goes - random y-axis position b/t -250 to 250
+            '''using random_y = random.choice(-250, 250) gave me error 2 positional arguments but 3 given'''
+            random_y = random.randint(-250, 250) # where goes - random y-axis position b/t -250 to 250
             new_car.goto(300, random_y)
 
             # Append to our list of all_cars[]

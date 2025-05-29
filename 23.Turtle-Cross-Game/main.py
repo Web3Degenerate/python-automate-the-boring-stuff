@@ -15,9 +15,13 @@ player = Player()
 '''Instantiate CarManager class from car_manager.py'''
 car_manager = CarManager()
 
+'''Instantiate Scoreboard class from scoreboard.py in V179'''
+scoreboard = Scoreboard()
+
+
 '''Get Player to move up with arrow (Sec 23. V175, 2:55)'''
 screen.listen()
-screen.onkey("Up")
+# screen.onkey("Up")
 # .go_up() is a custom function we created in player.py
 screen.onkey(player.go_up, "Up") #dont use .go_up(), triggers immediately
 
@@ -36,14 +40,18 @@ while game_is_on:
     for car in car_manager.all_cars:
         if car.distance(player) < 20:
             game_is_on = False
+            '''Sec 23. V179. (6:20) Call Scoreboard.py's game_over() method'''
+            scoreboard.game_over()
 
-
-    '''Detect successful crossing in Sec 23. V. 178 (0:34)'''
+    '''Detect successful crossing (Get across, complete level) in Sec 23. V. 178 (0:34)'''
     # Defined as line 280 in player.py constant (FINISH_LINE_Y = 280)
     if player.is_at_finish_line(): 
-        player.got_to_start() #reset turtle at starting position for next level
+        player.go_to_start() #reset turtle at starting position for next level
         '''Use new .level_up() function in car_manager.py'''
         car_manager.level_up()
+
+        '''Sec 23. V179. (3:50) update scoreboard level'''
+        scoreboard.increase_level()
 
 
 
