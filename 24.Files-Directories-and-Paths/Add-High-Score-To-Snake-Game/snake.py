@@ -7,6 +7,8 @@ LEFT = 180
 RIGHT = 0
 
 
+'''RESUME in Sec 24. V187 at 8th minute. Persist High Score'''
+
 class Snake:
 
     def __init__(self):
@@ -24,6 +26,15 @@ class Snake:
         new_segment.penup()
         new_segment.goto(position)
         self.segments.append(new_segment)
+
+    '''Added reset method in Sec 24, V187 (5:05). Recreate the init. Starting Over'''
+    def reset(self):
+        '''Move old snakes off the screen. Otherwise they just sit where died on screen V187 (6:55)'''
+        for seg in self.segments:
+            seg.goto(1000, 1000) #push dead snakes off screen 600 x 600
+        self.segments.clear() #remove all segments of snake from list
+        self.create_snake() #create brand new snake
+        self.head = self.segments[0] #set snake.head as the Zero'th element from that list of segments
 
     def extend(self):
         self.add_segment(self.segments[-1].position())

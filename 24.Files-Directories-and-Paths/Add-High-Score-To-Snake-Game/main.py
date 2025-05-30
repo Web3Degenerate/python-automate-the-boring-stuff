@@ -38,6 +38,7 @@ while game_is_on:
         # game_is_on = False #Removed in Sec 24. V182 (4:10)
         # scoreboard.game_over()  #Removed in Sec 24. V182 (4:10)
         scoreboard.reset() #call new method in scoreboard.py replacing game_over()
+        snake.reset() # call new reset method in snake.py
 
     #Detect collision with tail.
     for segment in snake.segments:
@@ -48,7 +49,7 @@ while game_is_on:
             # game_is_on = False #Removed in Sec 24. V182 (4:10)
             # scoreboard.game_over() #Removed in Sec 24. V182 (4:10)
             scoreboard.reset() #call new method in scoreboard.py replacing game_over()
-
+            snake.reset() # call new reset method in snake.py
 
 
 
