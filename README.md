@@ -548,7 +548,9 @@ And instead use:
 
 ---
 
-22.
+22. 
+
+
 
 ---
 
@@ -556,7 +558,10 @@ And instead use:
 
 ---
 
-24.
+24. Intermediate - Files and Directories. 
+
+- See Sec 24, V.183 on the start of Open, Read and Write to Files using `with` Keyword
+
 
 ---
 
