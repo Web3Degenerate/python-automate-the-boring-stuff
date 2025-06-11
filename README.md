@@ -562,6 +562,7 @@ And instead use:
 
 - See Sec 24, V.183 on the start of Open, Read and Write to Files using `with` Keyword
 
+- Review notes on opening files for work.
 
 ---
 
