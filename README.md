@@ -564,6 +564,9 @@ And instead use:
 
 - Review notes on opening files for work.
 
+- To Open a File with Python: 
+- - x
+
 ---
 
 ### 25. CSV Data and Pandas
