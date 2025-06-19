@@ -567,6 +567,9 @@ And instead use:
 - To Open a File with Python: 
 - - x
 
+- To Read a file with Python: 
+-- y
+
 ---
 
 ### 25. CSV Data and Pandas
