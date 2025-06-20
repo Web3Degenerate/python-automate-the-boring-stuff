@@ -570,7 +570,10 @@ And instead use:
 - To Read a file with Python: 
 -- y
 
----
+- To Write to a file with Python: 
+-- z
+
+
 
 ### 25. CSV Data and Pandas
 
