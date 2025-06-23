@@ -574,6 +574,9 @@ And instead use:
 -- z
 
 
+- Open, Read and Write
+-- key points: 
+
 
 ### 25. CSV Data and Pandas
 
