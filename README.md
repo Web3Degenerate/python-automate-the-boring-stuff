@@ -573,7 +573,7 @@ And instead use:
 - To Write to a file with Python: 
 -- z
 
-Resume at min 2:07
+Resume at min 2:38
 
 
 - Open, Read and Write
