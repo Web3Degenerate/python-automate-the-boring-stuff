@@ -5,4 +5,5 @@ print(contents)
 # close the file after finished so it doesn't take up additional resources. 
 # file.close()
 # file.close()
+# file.close()
 file.close()
