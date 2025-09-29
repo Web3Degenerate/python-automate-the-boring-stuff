@@ -554,6 +554,7 @@ And instead use:
 _Sept 19 2025 (ARM + Ambassador) update_
 _Sept 23 2025 (Possible ARM class on 9/28/25 and auto OT on Wed 10/1/25) update_
 _Sept 28 2025 (Unable to get into Sun 9/28/25 ARM class.)
+
 ---
 
 23. 
