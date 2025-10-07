@@ -555,6 +555,7 @@ _Sept 19 2025 (ARM + Ambassador) update_
 _Sept 23 2025 (Possible ARM class on 9/28/25 and auto OT on Wed 10/1/25) update_
 _Sept 28 2025 (Unable to get into Sun 9/28/25 ARM class.)
 _Oct 2 2025 (Fixed ARSAW station g-new ARM couldn't fix. Wrongly left out of ARM cohort)_
+_Oct 7 2025 (Completed 35 min section of drivers ed course)_
 ---
 
 23. 
