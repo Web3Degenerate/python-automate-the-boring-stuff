@@ -15,3 +15,4 @@ with open("my_file.txt") as file:
 # close the file after finished so it doesn't take up additional resources. 
 # file.close() #manually close the file. 
 # file.close() #manually close the file. 
+# file.close() #manually close the file. 
