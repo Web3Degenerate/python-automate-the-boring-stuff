@@ -17,3 +17,5 @@ with open("my_file.txt") as file:
 # file.close() #manually close the file. 
 # file.close() #manually close the file. 
 # file.close() #manually close the file. 
+# file.close() #manually close the file. 
+
