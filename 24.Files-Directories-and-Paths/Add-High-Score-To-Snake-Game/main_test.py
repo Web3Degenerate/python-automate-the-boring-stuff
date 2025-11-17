@@ -32,6 +32,7 @@ with open("my_file.txt", mode="a") as file: #this opens the file in read-only mo
 
 #
 #
+#
 # IF YOU OPEN a file that doesn't exist IN WRITE (mode=w) mode, it will create it for you
 with open("new_file.txt", mode="w") as file: #this opens the file in read-only mode
     file.write("Created with open() in mode=w aka write mode.")
