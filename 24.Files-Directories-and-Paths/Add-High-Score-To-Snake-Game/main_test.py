@@ -27,9 +27,11 @@ with open("my_file.txt") as file:
 #     file.write("New REPLACEMENT text.")
 
 # Append Mode
+# Append Mode
 with open("my_file.txt", mode="a") as file: #this opens the file in read-only mode
     file.write("\nNew APPENDED text.")
 
+#
 #
 #
 #
