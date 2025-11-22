@@ -9,7 +9,10 @@ class Scoreboard(Turtle):
         super().__init__()
         self.score = 0
         '''Sec 24. V.182 (1:00) Add attribute self.high_score'''
-        self.high_score = 0
+        '''Sec 24. V184 (2:05) Remove self.high_score and read from data.txt'''
+        # self.high_score = 0
+        with open("data.txt") as data:
+            int(data.read())
         self.color("white")
         self.penup()
         self.goto(0, 270)
