@@ -12,6 +12,7 @@ with open("my_file.txt") as file:
     contents = file.read() #save contents in variable `contents`
     print(contents)
 
+# close the file after finished so it doesn't take up additional resources.
 # close the file after finished so it doesn't take up additional resources. ls
 # file.close() #manually close the file. 
 
