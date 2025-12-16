@@ -71,7 +71,8 @@ while game_should_continue:
 
     # Give user feedback on their guess
     # Score keeping
-
+    # Score keeping
+    
     if is_correct: 
         score += 1
         print(f"You're right. Current score {score}")
