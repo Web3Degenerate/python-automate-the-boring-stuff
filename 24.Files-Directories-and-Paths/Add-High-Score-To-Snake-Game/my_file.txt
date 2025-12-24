@@ -3,3 +3,4 @@ New REPLACEMENT text.
 Hello, my name is Ian.
 New APPENDED text.
 New APPENDED text.
+New APPENDED text.

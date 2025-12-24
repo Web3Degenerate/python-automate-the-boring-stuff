@@ -39,3 +39,7 @@ with open("my_file.txt", mode="a") as file: #this opens the file in read-only mo
 # IF YOU OPEN a file that doesn't exist IN WRITE (mode=w) mode, it will create it for you
 with open("new_file.txt", mode="w") as file: #this opens the file in read-only mode
     file.write("Created with open() in mode=w aka write mode.")
+
+with open("C:/Users/dAppH/OneDrive/Documents/Dev/python/automate-the-boring-stuff/python-automate-the-boring-stuff/24.Files-Directories-and-Paths/Add-High-Score-To-Snake-Game/new_file.txt") as file:
+    contents = file.read()
+    print(contents)
