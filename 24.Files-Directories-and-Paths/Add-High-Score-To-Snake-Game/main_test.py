@@ -53,6 +53,7 @@ with open("/Users/dAppH/OneDrive/Documents/Dev/python/automate-the-boring-stuff/
 
 
 # TRIED MOVING TO ACTUAL DESKTOP - OUTSIDE OF OneDrive
+# TRIED MOVING TO ACTUAL DESKTOP - OUTSIDE OF OneDrive
 # with open("C:\Users\dAppH\OneDrive\Desktop\new_file.txt") as file:
 # with open("C:/Users/dAppH/Documents/new_file.txt") as file:
 # with open("../../Documents/new_file.txt") as file:
