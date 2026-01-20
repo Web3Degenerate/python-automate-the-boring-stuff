@@ -29,6 +29,7 @@ with open("my_file.txt") as file:
 
 # Append Mode
 # Append Mode
+# Append Mode
 with open("my_file.txt", mode="a") as file: #this opens the file in read-only mode
     file.write("\nNew APPENDED text.")
 
