@@ -60,3 +60,7 @@ with open("/Users/dAppH/OneDrive/Documents/Dev/python/automate-the-boring-stuff/
 # with open("../../Documents/new_file.txt") as file:
 #     contents = file.read()
 #     print(contents)
+
+## The Absolute path is always relative to the root of your computer. 
+## Windows C:/
+## Mac - HD
